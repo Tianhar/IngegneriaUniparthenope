@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Ingegneria Uniparthenope</string>
+    <string name="news">News</string>
+    <string name="professors">Professors</string>
+    <string name="lessons_timetable">Lessons</string>
+    <string name="civileT" translatable="false">Civile e Ambientale</string>
+    <string name="civileM" translatable="false">Civile magistrale</string>
+    <string name="gestionaleT" translatable="false">Gestionale</string>
+    <string name="gestionaleM" translatable="false">Gestionale magistrale</string>
+    <string name="tlcT" translatable="false">Informatica, Biomedica e delle Telecomunicazioni</string>
+    <string name="tlcM" translatable="false">Sicurezza dei Dati e delle Comunicazioni magistrale</string>
+    <string name="pname">Name</string>
+    <string name="poffice">Office</string>
+    <string name="ptelephone">Telephone</string>
+    <string name="pemail">Email</string>
+</resources>

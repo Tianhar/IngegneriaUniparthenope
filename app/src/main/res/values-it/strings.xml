@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ingegneria Uniparthenope</string>
+    <string name="news">News</string>
+    <string name="professors">Docenti</string>
+    <string name="lessons_timetable">Lezioni</string>
+    <string name="pemail">Email</string>
+    <string name="pname">Nome</string>
+    <string name="poffice">Studio</string>
+    <string name="ptelephone">Telefono</string>
+</resources>
