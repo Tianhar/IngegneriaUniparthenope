@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".LessonsActivity">
 
+    <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintRight_toLeftOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/guideline8">
+
+        <ImageButton
+            android:id="@+id/buttonHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#fafafa"
+            app:srcCompat="@mipmap/backbutton"
+            tools:layout_editor_absoluteY="543dp" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -91,24 +110,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/lin1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline4">
-
-        <ImageButton
-            android:id="@+id/buttonHome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#fafafa"
-            app:srcCompat="@mipmap/home_button" />
-
-    </LinearLayout>
-
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
@@ -129,5 +130,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="135dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="67dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-1dp" />
 
 </android.support.constraint.ConstraintLayout>
