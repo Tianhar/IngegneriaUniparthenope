@@ -1,19 +1,19 @@
 package com.example.simon.ingegneriauniparthenope;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageButton;
 
 public class NewsActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
         setContentView(R.layout.activity_news);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //TODO - DA MIGLIORARE
 
@@ -40,13 +40,6 @@ public class NewsActivity extends AppCompatActivity {
         webview.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
 
 
-        ImageButton bottoneHome = (ImageButton) findViewById(R.id.buttonHome);
-        bottoneHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(NewsActivity.this, MainActivity.class));
-            }
-        });
     }
 
 

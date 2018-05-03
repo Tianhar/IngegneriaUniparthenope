@@ -1,12 +1,10 @@
 package com.example.simon.ingegneriauniparthenope;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -16,6 +14,9 @@ public class ProfActivity extends AppCompatActivity {
     protected void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
         setContentView(R.layout.activity_prof);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ListaDocenti lidoc = new ListaDocenti();
 
         final TextView nomeDocente = (TextView) findViewById(R.id.nomeDocente);
@@ -45,13 +46,6 @@ public class ProfActivity extends AppCompatActivity {
         });
 
 
-        ImageButton bottoneHome = (ImageButton) findViewById(R.id.buttonHome);
-        bottoneHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ProfActivity.this, MainActivity.class));
-            }
-        });
 
     }
 

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 public class LessonsActivity extends AppCompatActivity {
 
@@ -15,13 +14,9 @@ public class LessonsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
-        ImageButton bottoneHome = (ImageButton) findViewById(R.id.buttonHome);
-        bottoneHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LessonsActivity.this, MainActivity.class));
-            }
-        });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         Button bottoneCorso1 = (Button) findViewById(R.id.buttonCorso1);
         Button bottoneCorso2 = (Button) findViewById(R.id.buttonCorso2);

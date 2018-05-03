@@ -1,6 +1,8 @@
 package com.example.simon.ingegneriauniparthenope;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,10 +15,30 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Connessione a Facebook
+    public static Intent newFacebookIntent(PackageManager pm, String url) {
+        Uri uri = Uri.parse(url);
+        try {
+            ApplicationInfo applicationInfo = pm.getApplicationInfo("com.facebook.katana", 0);
+            if (applicationInfo.enabled) {
+                uri = Uri.parse("fb://facewebmodal/f?href=" + url);
+            }
+        } catch (PackageManager.NameNotFoundException ignored) {
+        }
+        return new Intent(Intent.ACTION_VIEW, uri);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
 
         Button bottoneNews = (Button) findViewById(R.id.buttonOne);
         Button bottoneProf = (Button) findViewById(R.id.buttonTwo);
@@ -60,12 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -76,9 +92,8 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.ITEM_2:
-            /*
-                Codice di gestione della voce ITEM_2 ALERT CON INFO REALIZZAZIONE APP AUTORI ECC
-             */
+                Intent fbconn = newFacebookIntent(getPackageManager(), "https://www.facebook.com/YouParthenope/");
+                startActivity(fbconn);
                 break;
 
             case R.id.ITEM_3:
@@ -88,4 +103,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+
 }

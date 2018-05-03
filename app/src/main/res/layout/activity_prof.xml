@@ -12,17 +12,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintRight_toLeftOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/guideline9">
+        app:layout_constraintTop_toBottomOf="@+id/guideline9"
+        tools:layout_editor_absoluteX="67dp">
 
-        <ImageButton
-            android:id="@+id/buttonHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#fafafa"
-            app:srcCompat="@mipmap/backbutton"
-            tools:layout_editor_absoluteY="543dp" />
     </LinearLayout>
 
     <TextView
@@ -246,13 +238,6 @@
     </LinearLayout>
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="1dp" />
-
-    <android.support.constraint.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -265,13 +250,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="135dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="67dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline9"
