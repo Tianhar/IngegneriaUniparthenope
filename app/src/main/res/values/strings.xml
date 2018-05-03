@@ -13,4 +13,8 @@
     <string name="poffice">Office</string>
     <string name="ptelephone">Telephone</string>
     <string name="pemail">Email</string>
+    <string name="ITEM_1">How to find us?</string>
+    <string name="ITEM_2" translatable="false">Info</string>
+    <string name="ITEM_3">Exit</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

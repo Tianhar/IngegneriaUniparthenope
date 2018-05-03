@@ -8,4 +8,6 @@
     <string name="pname">Nome</string>
     <string name="poffice">Studio</string>
     <string name="ptelephone">Telefono</string>
+    <string name="ITEM_1">Dove siamo</string>
+    <string name="ITEM_3">Esci</string>
 </resources>
