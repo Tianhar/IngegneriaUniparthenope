@@ -10,10 +10,8 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:layout_constraintBottom_toTopOf="@id/linear1"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/logo_g" />
@@ -26,10 +24,10 @@
         android:paddingTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -60,6 +58,16 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:text="@string/professors"
                 android:textColor="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/buttonFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/UTIL_3"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="290dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,15 +83,6 @@
                 android:text="@string/lessons_timetable"
                 android:textColor="?attr/colorBackgroundFloating" />
 
-            <Button
-                android:id="@+id/buttonFour"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="@string/UTIL_3"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
-                tools:layout_editor_absoluteX="147dp"
-                tools:layout_editor_absoluteY="290dp" />
         </LinearLayout>
     </LinearLayout>
 

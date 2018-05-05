@@ -1,8 +1,6 @@
 package com.example.simon.ingegneriauniparthenope;
 
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,20 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookIntent;
+
 public class MainActivity extends AppCompatActivity {
 
-    //Connessione a Facebook
-    public static Intent newFacebookIntent(PackageManager pm, String url) {
-        Uri uri = Uri.parse(url);
-        try {
-            ApplicationInfo applicationInfo = pm.getApplicationInfo("com.facebook.katana", 0);
-            if (applicationInfo.enabled) {
-                uri = Uri.parse("fb://facewebmodal/f?href=" + url);
-            }
-        } catch (PackageManager.NameNotFoundException ignored) {
-        }
-        return new Intent(Intent.ACTION_VIEW, uri);
-    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -38,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
 
         Button bottoneNews = (Button) findViewById(R.id.buttonOne);
         Button bottoneProf = (Button) findViewById(R.id.buttonTwo);
@@ -75,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         bottoneUtiliy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, UtilityActivity.class));
+                startActivity(new Intent(MainActivity.this, LinkActivity.class));
             }
         });
 

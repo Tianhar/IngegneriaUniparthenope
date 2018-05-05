@@ -17,6 +17,7 @@ public class ListaDocenti {
     }
 
     private void addTelefoni() {
+        telefono.add("Telefono Docente");
         telefono.add("081-5476769");
         telefono.add("081-5476719");
         telefono.add("081-5476730");
@@ -81,6 +82,7 @@ public class ListaDocenti {
     }
 
     private void addNomi() {
+        nome.add("Nome Docente");
         nome.add("Ambrosino Roberto");
         nome.add("Ariola Marco");
         nome.add("Aversa Stefano");
@@ -145,6 +147,7 @@ public class ListaDocenti {
     }
 
     private void addStudi() {
+        studio.add("Studio Docente");
         studio.add("VI Piano - Lato Nord - Stanza 618");
         studio.add("V Piano - Lato Sud - Stanza 501");
         studio.add("VI Piano - Lato Sud - Stanza 601");
@@ -209,6 +212,7 @@ public class ListaDocenti {
     }
 
     private void addEmail() {
+        email.add("E-mail Docente");
         email.add("roberto.ambrosino@uniparthenope.it");
         email.add("marco.ariola@uniparthenope.it");
         email.add("stefano.aversa@uniparthenope.it");

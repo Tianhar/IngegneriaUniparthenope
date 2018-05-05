@@ -10,5 +10,7 @@
     <string name="ptelephone">Telefono</string>
     <string name="ITEM_1">Dove siamo</string>
     <string name="ITEM_3">Esci</string>
-    <string name="UTIL_1">Facebook Gruppo</string>
+    <string name="UTIL_1">Gruppo Facebook</string>
+    <string name="UTIL_2">Sito e-Learning</string>
+    <string name="UTIL_3" translatable="false">Link Utili</string>
 </resources>

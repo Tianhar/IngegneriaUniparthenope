@@ -30,7 +30,7 @@ public class ProfActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, ListaDocenti.nome);
         spin_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDoc.setAdapter(spin_adapter);
-
+        spinnerDoc.setSelection(0);
         spinnerDoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {

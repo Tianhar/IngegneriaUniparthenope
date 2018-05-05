@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookIntent;
 
-public class UtilityActivity extends AppCompatActivity {
+
+public class LinkActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_utility);
+        setContentView(R.layout.activity_link);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -24,8 +26,8 @@ public class UtilityActivity extends AppCompatActivity {
         bottone_Gruppo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://it-it.facebook.com/ingegneria.uniparthenope/"));
-                startActivity(browserIntent);
+                Intent fbconn = newFacebookIntent(getPackageManager(), "https://it-it.facebook.com/ingegneria.uniparthenope/");
+                startActivity(fbconn);
             }
         });
 

@@ -19,6 +19,6 @@
     <string name="title_activity_maps">Map</string>
     <string name="UTIL_1">Facebook Group</string>
     <string name="UTIL_2">Blended Learning</string>
-    <string name="UTIL_3">Utility</string>
-    <string name="UTIL_4">UTILITY</string>
+    <string name="UTIL_3">Useful Links</string>
+    <string name="UTIL_4" translatable="false">UTILITY</string>
 </resources>
