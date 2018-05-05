@@ -74,6 +74,16 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:text="@string/lessons_timetable"
                 android:textColor="?attr/colorBackgroundFloating" />
+
+            <Button
+                android:id="@+id/buttonFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/UTIL_3"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="290dp" />
         </LinearLayout>
     </LinearLayout>
 

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Button bottoneNews = (Button) findViewById(R.id.buttonOne);
         Button bottoneProf = (Button) findViewById(R.id.buttonTwo);
         Button bottoneLessons = (Button) findViewById(R.id.buttonThree);
+        Button bottoneUtiliy = (Button) findViewById(R.id.buttonFour);
 
         ImageButton bottoneCS = (ImageButton) findViewById(R.id.buttonStudenti);
 
@@ -68,6 +69,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ProfActivity.class));
+            }
+        });
+
+        bottoneUtiliy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, UtilityActivity.class));
             }
         });
 
