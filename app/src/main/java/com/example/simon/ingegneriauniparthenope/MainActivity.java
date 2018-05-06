@@ -17,6 +17,7 @@ import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookInten
 
 public class MainActivity extends AppCompatActivity {
 
+    public static NewsDownloader newsd = (NewsDownloader) new NewsDownloader().execute();
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
