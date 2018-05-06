@@ -6,6 +6,7 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import org.jsoup.Jsoup;
 
 public class NewsActivity extends AppCompatActivity {
 
@@ -38,6 +39,9 @@ public class NewsActivity extends AppCompatActivity {
         webview.loadUrl("http://www.ingegneria.uniparthenope.it/avvisi.php");
 
         webview.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
+
+
+
 
 
     }
