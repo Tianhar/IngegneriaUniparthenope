@@ -1,5 +1,7 @@
 package com.example.simon.ingegneriauniparthenope;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -91,8 +93,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent fbconn = newFacebookIntent(getPackageManager(), "https://www.facebook.com/YouParthenope/");
                 startActivity(fbconn);
                 break;
-
             case R.id.ITEM_3:
+                final AlertDialog.Builder alertinfo = new AlertDialog.Builder(MainActivity.this);
+                alertinfo.setTitle("Info").setMessage(getString(R.string.infoapp)).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+                    }
+
+                });
+                AlertDialog dialoginfo = alertinfo.create();
+                dialoginfo.show();
+                break;
+
+            case R.id.ITEM_4:
 
                 MainActivity.this.finish();
 
