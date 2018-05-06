@@ -30,5 +30,4 @@ dependencies {
     // jsoup HTML parser library @ https://jsoup.org/
     implementation fileTree(dir: 'libs', include: ['jsoup-1.11.3.jar'])
 
-
 }
