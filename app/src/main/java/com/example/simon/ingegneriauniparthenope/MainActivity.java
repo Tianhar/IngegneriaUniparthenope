@@ -108,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.ITEM_4:
-
-                MainActivity.this.finish();
+                finish();
+                System.exit(0);
 
         }
         return false;
