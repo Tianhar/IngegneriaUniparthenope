@@ -48,6 +48,13 @@
             android:backgroundTint="@color/colorAccent"
             android:text="@string/UTIL_5" />
 
+        <Button
+            android:id="@+id/bottoneSitoAteneo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/UTIL_6" />
+
     </LinearLayout>
 
     <android.support.constraint.Guideline
