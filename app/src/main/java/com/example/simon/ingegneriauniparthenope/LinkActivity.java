@@ -22,7 +22,9 @@ public class LinkActivity extends AppCompatActivity {
         Button bottone_Gruppo = (Button) findViewById(R.id.bottoneGruppo);
         Button bottone_Learning = (Button) findViewById(R.id.bottoneLearning);
         Button bottone_esse3 = (Button) findViewById(R.id.bottoneEsse3);
-        Button bottone_ateno = (Button) findViewById(R.id.bottoneSitoAteneo);
+        Button bottone_ateneo = (Button) findViewById(R.id.bottoneSitoAteneo);
+        Button bottone_dip = (Button) findViewById(R.id.bottoneSitoDip);
+
 
         bottone_Gruppo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,10 +50,18 @@ public class LinkActivity extends AppCompatActivity {
             }
         });
 
-        bottone_ateno.setOnClickListener(new View.OnClickListener() {
+        bottone_ateneo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uniparthenope.it/"));
+                startActivity(browserIntent);
+            }
+        });
+
+        bottone_dip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/"));
                 startActivity(browserIntent);
             }
         });
