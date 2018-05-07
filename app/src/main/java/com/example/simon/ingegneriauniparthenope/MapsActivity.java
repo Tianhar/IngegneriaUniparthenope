@@ -34,7 +34,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         MarkerOptions markerOpt = new MarkerOptions()
                 .position(centrodirezionale);
-        mMap.addMarker(markerOpt.position(centrodirezionale).title("Dipartimento di Ingegneria - Univesrità Parthenope"));
+        mMap.addMarker(markerOpt.position(centrodirezionale).title("Dipartimento di Ingegneria - Università Parthenope"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centrodirezionale, 12));
 
 

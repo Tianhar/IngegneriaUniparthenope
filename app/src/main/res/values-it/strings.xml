@@ -17,4 +17,5 @@
     <string name="giornoNews">News del</string>
     <string name="noPNews">Nessuna News più recente</string>
     <string name="newsIndication">Fai uno swipe per passare alla news successiva</string>
+    <string name="ITEM_5">Vai al sito</string>
 </resources>

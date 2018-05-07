@@ -26,4 +26,5 @@
     <string name="giornoNews">News del</string>
     <string name="noPNews">No latest news</string>
     <string name="newsIndication">Swipe to change news</string>
+    <string name="ITEM_5">Open site</string>
 </resources>
