@@ -14,4 +14,7 @@
     <string name="UTIL_2">Sito e-Learning</string>
     <string name="UTIL_3" translatable="false">Link Utili</string>
     <string name="infoapp">Questa applicazione è una guida per lo studente di ingegneria Uniparthenope. Ci sono news, orari e tutto ciò che riguarda il corso di ingegneria. Gli autori non sono responsabili di improvvisi cambiamenti di orari o di avvisi.</string>
+    <string name="giornoNews">News del</string>
+    <string name="noPNews">Nessuna News più recente</string>
+    <string name="newsIndication">Fai uno swipe per passare alla news successiva</string>
 </resources>

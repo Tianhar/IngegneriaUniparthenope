@@ -23,4 +23,7 @@
     <string name="UTIL_3">Useful Links</string>
     <string name="UTIL_4" translatable="false">UTILITY</string>
     <string name="infoapp">This application is a guide for the Uniparthenope engineering student. There are news, hours and everything related to the engineering course. The authors are not responsible for sudden changes in hours or notices.</string>
+    <string name="giornoNews">News del</string>
+    <string name="noPNews">No latest news</string>
+    <string name="newsIndication">Swipe to change news</string>
 </resources>

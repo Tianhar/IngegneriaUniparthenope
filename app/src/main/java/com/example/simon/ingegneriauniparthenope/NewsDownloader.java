@@ -8,10 +8,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class NewsDownloader extends AsyncTask<Void, Void, Void> {
-    public static StringBuilder builder = new StringBuilder();
+    public static ArrayList<String> newsData = new ArrayList<String>();
+    public static ArrayList<String> newsTitolo = new ArrayList<String>();
+    public static ArrayList<String> newsCorpo = new ArrayList<String>();
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -21,29 +24,26 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
             Element content = doc.getElementById("content");
             Elements newsc = content.getElementsByClass("news");
 
-            builder.append("News " + title).append("\n\n");
-
             for (Element link : newsc) {
+                StringBuilder builder = new StringBuilder();
                 Elements dates = link.getElementsByClass("data");
                 int darimuovere = dates.text().length();
+                newsData.add(dates.text().substring(0, darimuovere - 1));
                 Elements titles = link.getElementsByTag("h4");
+                newsTitolo.add(titles.text().substring(darimuovere + 1));
                 Elements contenuto = link.getElementsByTag("p");
                 String cont = contenuto.text().replaceAll("’", "'");
                 Elements list = link.getElementsByTag("li");
-
-                builder.append("\n").append("-News del ").append(dates.text()).append("\n")
-                        .append("\n").append(titles.text().substring(darimuovere + 1)).append("\n")
-                        .append("\n").append(cont).append("\n");
+                builder.append(cont).append("\n");
                 int ii = 1;
                 for (Element liste : list) {
                     builder.append("\n").append("" + ii + "- " + liste.text()).append("\n");
                     ii++;
                 }
-                builder.append("\n\n");
-
+                newsCorpo.add(builder.toString());
             }
         } catch (IOException e) {
-            builder.append("Error : ").append(e.getMessage()).append("\n");
+
         }
         return null;
     }
