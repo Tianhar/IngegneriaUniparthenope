@@ -37,5 +37,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(markerOpt.position(centrodirezionale).title("Dipartimento di Ingegneria - Univesrità Parthenope"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centrodirezionale, 12));
 
+
     }
 }
