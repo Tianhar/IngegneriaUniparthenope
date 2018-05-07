@@ -7,7 +7,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -26,15 +25,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -42,12 +33,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng centrodirezionale = new LatLng(40.857094, 14.284117);
 
         MarkerOptions markerOpt = new MarkerOptions()
-                .position(centrodirezionale)
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
-        mMap.addMarker(markerOpt.position(centrodirezionale).title("Ingegneria Uniparthenope"));
-        //mMap.addMarker(markerOpt);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centrodirezionale, 10));
-        //mMap.animateCamera(CameraUpdateFactory.zoomTo(10), 1000, null);
+                .position(centrodirezionale);
+        mMap.addMarker(markerOpt.position(centrodirezionale).title("Dipartimento di Ingegneria - Univesrità Parthenope"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centrodirezionale, 12));
 
     }
 }
