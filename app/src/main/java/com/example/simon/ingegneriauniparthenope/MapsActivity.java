@@ -7,6 +7,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -37,10 +38,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        
-        // Add a marker in Sydney and move the camera
+
         LatLng centrodirezionale = new LatLng(40.857094, 14.284117);
-        mMap.addMarker(new MarkerOptions().position(centrodirezionale).title("Ingegneria UniParthenope"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(centrodirezionale));
+
+        MarkerOptions markerOpt = new MarkerOptions()
+                .position(centrodirezionale)
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        mMap.addMarker(markerOpt.position(centrodirezionale).title("Ingegneria Uniparthenope"));
+        //mMap.addMarker(markerOpt);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centrodirezionale, 10));
+        //mMap.animateCamera(CameraUpdateFactory.zoomTo(10), 1000, null);
+
     }
 }
