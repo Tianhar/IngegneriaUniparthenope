@@ -21,7 +21,7 @@ public class LinkActivity extends AppCompatActivity {
 
         Button bottone_Gruppo = (Button) findViewById(R.id.bottoneGruppo);
         Button bottone_Learning = (Button) findViewById(R.id.bottoneLearning);
-
+        Button bottone_esse3 = (Button) findViewById(R.id.bottoneEsse3);
 
         bottone_Gruppo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +35,14 @@ public class LinkActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://edi.uniparthenope.it/"));
+                startActivity(browserIntent);
+            }
+        });
+
+        bottone_esse3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://uniparthenope.esse3.cineca.it/Home.do"));
                 startActivity(browserIntent);
             }
         });
