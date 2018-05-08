@@ -53,8 +53,12 @@ public class NewsActivity extends AppCompatActivity {
             }
 
             public void onSwipeLeft() {
-                newsIndex++;
-                spinnerDate.setSelection(newsIndex);
+                if (newsIndex == (newsd.newsData.size() - 1)) {
+                    Toast.makeText(getApplicationContext(), R.string.noNNews, Toast.LENGTH_SHORT).show();
+                } else {
+                    newsIndex++;
+                    spinnerDate.setSelection(newsIndex);
+                }
 
             }
 
@@ -73,9 +77,12 @@ public class NewsActivity extends AppCompatActivity {
             }
 
             public void onSwipeLeft() {
-                newsIndex++;
-                spinnerDate.setSelection(newsIndex);
-
+                if (newsIndex == (newsd.newsData.size() - 1)) {
+                    Toast.makeText(getApplicationContext(), R.string.noNNews, Toast.LENGTH_SHORT).show();
+                } else {
+                    newsIndex++;
+                    spinnerDate.setSelection(newsIndex);
+                }
             }
 
 
@@ -93,9 +100,12 @@ public class NewsActivity extends AppCompatActivity {
             }
 
             public void onSwipeLeft() {
-                newsIndex++;
-                spinnerDate.setSelection(newsIndex);
-
+                if (newsIndex == (newsd.newsData.size() - 1)) {
+                    Toast.makeText(getApplicationContext(), R.string.noNNews, Toast.LENGTH_SHORT).show();
+                } else {
+                    newsIndex++;
+                    spinnerDate.setSelection(newsIndex);
+                }
             }
         });
 
@@ -109,6 +119,7 @@ public class NewsActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 title.setText(newsd.newsTitolo.get(position).toString());
                 result.setText(newsd.newsCorpo.get(position).toString());
+                newsIndex = position;
 
             }
 

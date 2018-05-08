@@ -31,4 +31,5 @@
     <string name="newsIndication">Swipe to change news</string>
     <string name="ITEM_5">Open site</string>
     <string name="UTIL_7">Department Site</string>
+    <string name="noNNews">No older news</string>
 </resources>

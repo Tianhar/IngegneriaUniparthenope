@@ -20,4 +20,5 @@
     <string name="ITEM_5">Vai al sito</string>
     <string name="UTIL_6">Sito Ateneo</string>
     <string name="UTIL_7">Sito Dipartimento</string>
+    <string name="noNNews">Nessuna News più vecchia</string>
 </resources>
