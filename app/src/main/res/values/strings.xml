@@ -35,4 +35,13 @@
     <string name="staff">Staff</string>
     <string name="downloaderror">Download error</string>
     <string name="nointernet">No Internet connection. This app needs an active internet connection to work as intended!</string>
+    <string name="forms">Forms</string>
+    <string name="parttimerequest">Part-time request</string>
+    <string name="exemption_handicap">Request exemption for disabled people</string>
+    <string name="rinuncia_studi">give up studies</string>
+    <string name="domanda_decadenza">Application for revocation</string>
+    <string name="richiesta_certificati">Richiesta certificati</string>
+    <string name="domanda_laurea">Graduation exam application</string>
+    <string name="esami_scelta">exam request form chosen</string>
+    <string name="domand_laurea">graduation exam application and parchment request</string>
 </resources>

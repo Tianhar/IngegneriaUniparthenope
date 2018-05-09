@@ -24,4 +24,12 @@
     <string name="staff">Personale</string>
     <string name="downloaderror">Errore nel download</string>
     <string name="nointernet">Nessuna connessione Internet. Questa app necessita di una connessione Internet attiva per funzionare!</string>
+    <string name="forms">Modulistica</string>
+    <string name="parttimerequest">Richiesta part-time</string>
+    <string name="exemption_handicap">Richiesta esonero portatori di handicap</string>
+    <string name="rinuncia_studi">Rinuncia agli studi</string>
+    <string name="domanda_decadenza">Domanda di decadenza</string>
+    <string name="domanda_laurea">Domanda esame di laurea</string>
+    <string name="esami_scelta">Modulo richiesta esami a scelta</string>
+    <string name="domand_laurea">domanda esame di laurea e richiesta pergamena</string>
 </resources>

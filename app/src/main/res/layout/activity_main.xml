@@ -90,6 +90,14 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:text="@string/staff"
                 android:textColor="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/buttonSix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/forms"
+                android:textColor="@android:color/background_light" />
         </LinearLayout>
     </LinearLayout>
 

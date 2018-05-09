@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         Button bottoneLessons = (Button) findViewById(R.id.buttonThree);
         Button bottoneUtiliy = (Button) findViewById(R.id.buttonFour);
         Button bottoneTech = (Button) findViewById(R.id.buttonFive);
+        Button bottoneMod = (Button) findViewById(R.id.buttonSix);
+
 
         if (checkConnectivity() == 1) {
             //do something
@@ -92,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, TechActivity.class));
+            }
+        });
+
+        bottoneMod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ModulisticaActivity.class));
             }
         });
 

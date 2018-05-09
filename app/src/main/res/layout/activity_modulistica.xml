@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LessonsActivity">
+
+    <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/guideline8"
+        tools:layout_editor_absoluteX="67dp">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/forms"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="36sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="474dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline6">
+
+        <Button
+            android:id="@+id/buttonModulo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/parttimerequest"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/buttonModulo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/exemption_handicap"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/buttonModulo3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/rinuncia_studi"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/buttonModulo4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/domanda_decadenza"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/buttonModulo5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/richiesta_certificati"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/buttonModulo6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/domand_laurea"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:id="@+id/buttonModulo7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/esami_scelta"
+            android:textColor="@android:color/background_light" />
+
+
+    </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="642dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="79dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="-1dp" />
+
+</android.support.constraint.ConstraintLayout>

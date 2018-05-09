@@ -44,35 +44,42 @@
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
+
         <activity
             android:name=".ProfActivity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
-        <activity
-            android:name=".TechActivity"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
-        <activity
-            android:name=".LessonsActivity"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
-        <activity
-            android:name=".LinkActivity"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
+
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
 
+        <activity
+            android:name=".TechActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
+
+        <activity
+            android:name=".LessonsActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
+
+        <activity
+            android:name=".LinkActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -91,11 +98,12 @@
             android:label="@string/title_activity_maps"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
+
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
 
-
+        <activity android:name=".ModulisticaActivity"></activity>
     </application>
 
 </manifest>
