@@ -3,6 +3,8 @@ package com.example.simon.ingegneriauniparthenope;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,12 +14,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookIntent;
 
 public class MainActivity extends AppCompatActivity {
 
     public static NewsDownloader newsd = (NewsDownloader) new NewsDownloader().execute();
+    public static ProfDownloader profd = (ProfDownloader) new ProfDownloader().execute();
+    public static TechDownloader techd = (TechDownloader) new TechDownloader().execute();
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -35,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         Button bottoneProf = (Button) findViewById(R.id.buttonTwo);
         Button bottoneLessons = (Button) findViewById(R.id.buttonThree);
         Button bottoneUtiliy = (Button) findViewById(R.id.buttonFour);
+        Button bottoneTech = (Button) findViewById(R.id.buttonFive);
+
+        if (checkConnectivity() == 1) {
+            //do something
+        }
 
         ImageButton bottoneCS = (ImageButton) findViewById(R.id.buttonStudenti);
 
@@ -78,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        bottoneTech.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TechActivity.class));
+            }
+        });
+
 
     }
 
@@ -115,4 +132,20 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    private int checkConnectivity() {
+        boolean enabled = true;
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(MainActivity.this.CONNECTIVITY_SERVICE);
+        NetworkInfo info = connectivityManager.getActiveNetworkInfo();
+        int internet;
+        if ((info == null || !info.isConnected() || !info.isAvailable())) {
+            internet = 0;//sin connessione
+            Toast.makeText(getApplicationContext(), R.string.nointernet, Toast.LENGTH_LONG).show();
+            enabled = false;
+        } else {
+            internet = 1;//connessione
+        }
+
+        return internet;
+    }
 }

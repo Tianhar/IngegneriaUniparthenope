@@ -128,7 +128,11 @@ public class NewsActivity extends AppCompatActivity {
             }
         });
 
-        Toast.makeText(getApplicationContext(), R.string.newsIndication, Toast.LENGTH_SHORT).show();
+        if (newsd.erroreDownload == true) {
+            Toast.makeText(getApplicationContext(), R.string.downloaderror, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), R.string.newsIndication, Toast.LENGTH_SHORT).show();
+        }
 
     }
 

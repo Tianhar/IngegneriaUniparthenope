@@ -7,6 +7,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.example.simon.ingegneriauniparthenope.MainActivity.profd;
 
 public class ProfActivity extends AppCompatActivity {
 
@@ -17,7 +20,6 @@ public class ProfActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ListaDocenti lidoc = new ListaDocenti();
 
         final TextView nomeDocente = (TextView) findViewById(R.id.nomeDocente);
         final TextView studioDocente = (TextView) findViewById(R.id.studioDocente);
@@ -27,17 +29,17 @@ public class ProfActivity extends AppCompatActivity {
         Spinner spinnerDoc = (Spinner) findViewById(R.id.spinnerDocenti);
 
         ArrayAdapter<String> spin_adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, ListaDocenti.nome);
+                android.R.layout.simple_spinner_item, profd.nome);
         spin_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDoc.setAdapter(spin_adapter);
         spinnerDoc.setSelection(0);
         spinnerDoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                nomeDocente.setText(ListaDocenti.nome.get(position).toString());
-                studioDocente.setText(ListaDocenti.studio.get(position).toString());
-                telefonoDocente.setText(ListaDocenti.telefono.get(position).toString());
-                emailDocente.setText(ListaDocenti.email.get(position).toString());
+                nomeDocente.setText(profd.nome.get(position).toString());
+                studioDocente.setText(profd.studio.get(position).toString());
+                telefonoDocente.setText(profd.telefono.get(position).toString());
+                emailDocente.setText(profd.email.get(position).toString());
             }
 
             @Override
@@ -45,9 +47,12 @@ public class ProfActivity extends AppCompatActivity {
             }
         });
 
-
+        if (profd.erroreDownload == true) {
+            Toast.makeText(getApplicationContext(), R.string.downloaderror, Toast.LENGTH_SHORT).show();
+        }
 
     }
+
 
 }
 

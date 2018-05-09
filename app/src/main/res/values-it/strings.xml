@@ -21,4 +21,7 @@
     <string name="UTIL_6">Sito Ateneo</string>
     <string name="UTIL_7">Sito Dipartimento</string>
     <string name="noNNews">Nessuna News più vecchia</string>
+    <string name="staff">Personale</string>
+    <string name="downloaderror">Errore nel download</string>
+    <string name="nointernet">Nessuna connessione Internet. Questa app necessita di una connessione Internet attiva per funzionare!</string>
 </resources>

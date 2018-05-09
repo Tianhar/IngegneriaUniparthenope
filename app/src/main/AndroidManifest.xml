@@ -52,6 +52,13 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
         <activity
+            android:name=".TechActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
+        <activity
             android:name=".LessonsActivity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />

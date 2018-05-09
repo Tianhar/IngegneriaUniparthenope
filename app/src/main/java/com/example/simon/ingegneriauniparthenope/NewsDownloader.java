@@ -17,6 +17,9 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
     public static ArrayList<String> newsData = new ArrayList<String>();
     public static ArrayList<String> newsTitolo = new ArrayList<String>();
     public static ArrayList<String> newsCorpo = new ArrayList<String>();
+    public static boolean erroreDownload = false;
+
+
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -47,7 +50,7 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
                 newsCorpo.add(builder.toString());
             }
         } catch (IOException e) {
-
+            erroreDownload = true;
         }
         return null;
     }

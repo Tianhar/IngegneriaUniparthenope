@@ -32,4 +32,7 @@
     <string name="ITEM_5">Open site</string>
     <string name="UTIL_7">Department Site</string>
     <string name="noNNews">No older news</string>
+    <string name="staff">Staff</string>
+    <string name="downloaderror">Download error</string>
+    <string name="nointernet">No Internet connection. This app needs an active internet connection to work as intended!</string>
 </resources>
