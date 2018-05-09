@@ -8,6 +8,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 
 
@@ -19,7 +21,10 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         try {
-            Document doc = Jsoup.connect("http://www.ingegneria.uniparthenope.it/index.php?page=news").get();
+            String url = "http://www.ingegneria.uniparthenope.it/index.php?page=news";
+            InputStream input = new URL(url).openStream();
+            Document doc = Jsoup.parse(input, "CP1252", url);
+            //Document doc = Jsoup.connect("http://www.ingegneria.uniparthenope.it/index.php?page=news").get();
             String title = doc.title();
             Element content = doc.getElementById("content");
             Elements newsc = content.getElementsByClass("news");
@@ -32,9 +37,8 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
                 Elements titles = link.getElementsByTag("h4");
                 newsTitolo.add(titles.text().substring(darimuovere + 1));
                 Elements contenuto = link.getElementsByTag("p");
-                String cont = contenuto.text().replaceAll("’", "'");
                 Elements list = link.getElementsByTag("li");
-                builder.append(cont).append("\n");
+                builder.append(contenuto.text()).append("\n");
                 int ii = 1;
                 for (Element liste : list) {
                     builder.append("\n").append("" + ii + "- " + liste.text()).append("\n");
