@@ -103,7 +103,16 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
 
-        <activity android:name=".ModulisticaActivity"></activity>
+        <activity
+            android:name=".ModulisticaActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
+
+
     </application>
 
 </manifest>
