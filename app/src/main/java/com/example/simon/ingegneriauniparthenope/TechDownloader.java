@@ -20,6 +20,7 @@ public class TechDownloader extends AsyncTask<Void, Void, Void> {
     static public ArrayList<String> studio = new ArrayList<String>();
     static public ArrayList<String> email = new ArrayList<String>();
     public static boolean erroreDownload = false;
+    public static int downloadStatus = 0;
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -50,7 +51,20 @@ public class TechDownloader extends AsyncTask<Void, Void, Void> {
         } catch (IOException e) {
             erroreDownload = true;
         }
+        downloadStatus = 1;
         return null;
+    }
+
+    @Override
+    protected void onPostExecute(Void voids) {
+        if ((downloadStatus == 1) && (erroreDownload == true)) {
+            downloadStatus = 2;
+        } else {
+            if ((downloadStatus == 1) && (erroreDownload == false) && (nome.size() == 0)) {
+                downloadStatus = 3;
+            }
+
+        }
     }
 
 }

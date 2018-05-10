@@ -18,6 +18,7 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
     public static ArrayList<String> newsTitolo = new ArrayList<String>();
     public static ArrayList<String> newsCorpo = new ArrayList<String>();
     public static boolean erroreDownload = false;
+    public static int downloadStatus = 0;
 
 
 
@@ -52,7 +53,20 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
         } catch (IOException e) {
             erroreDownload = true;
         }
+        downloadStatus = 1;
         return null;
+    }
+
+    @Override
+    protected void onPostExecute(Void voids) {
+        if ((downloadStatus == 1) && (erroreDownload == true)) {
+            downloadStatus = 2;
+        } else {
+            if ((downloadStatus == 1) && (erroreDownload == false) && (newsData.size() == 0)) {
+                downloadStatus = 3;
+            }
+
+        }
     }
 
 }

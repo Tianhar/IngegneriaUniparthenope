@@ -3,8 +3,6 @@ package com.example.simon.ingegneriauniparthenope;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import static com.example.simon.ingegneriauniparthenope.Utility.checkConnectivity;
 import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookIntent;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Button bottoneMod = (Button) findViewById(R.id.buttonSix);
 
 
-        if (checkConnectivity() == 1) {
-            //do something
+        if (checkConnectivity(this) == 0) {
+            Toast.makeText(getApplicationContext(), R.string.nointernet, Toast.LENGTH_LONG).show();
         }
 
         ImageButton bottoneCS = (ImageButton) findViewById(R.id.buttonStudenti);
@@ -134,27 +133,32 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.ITEM_4:
-                finish();
+                this.finish();
                 System.exit(0);
+                break;
+
+            case R.id.ITEM_6:
+                Intent refresh = new Intent(this, MainActivity.class);
+                startActivity(refresh);
+                this.finish();
+                break;
 
         }
         return false;
     }
 
-    private int checkConnectivity() {
-        boolean enabled = true;
-
-        ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(MainActivity.this.CONNECTIVITY_SERVICE);
-        NetworkInfo info = connectivityManager.getActiveNetworkInfo();
-        int internet;
-        if ((info == null || !info.isConnected() || !info.isAvailable())) {
-            internet = 0;//sin connessione
-            Toast.makeText(getApplicationContext(), R.string.nointernet, Toast.LENGTH_LONG).show();
-            enabled = false;
-        } else {
-            internet = 1;//connessione
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if ((checkConnectivity(this) == 1) && ((newsd.downloadStatus == 2) || (newsd.downloadStatus == 3))) {
+            newsd = (NewsDownloader) new NewsDownloader().execute();
+        }
+        if ((checkConnectivity(this) == 1) && ((profd.downloadStatus == 2) || (profd.downloadStatus == 3))) {
+            profd = (ProfDownloader) new ProfDownloader().execute();
+        }
+        if ((checkConnectivity(this) == 1) && ((techd.downloadStatus == 2) || (techd.downloadStatus == 3))) {
+            techd = (TechDownloader) new TechDownloader().execute();
         }
 
-        return internet;
     }
 }

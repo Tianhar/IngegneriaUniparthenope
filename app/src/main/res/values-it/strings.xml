@@ -22,7 +22,7 @@
     <string name="UTIL_7">Sito Dipartimento</string>
     <string name="noNNews">Nessuna News più vecchia</string>
     <string name="staff">Personale</string>
-    <string name="downloaderror">Errore nel download</string>
+    <string name="downloaderror">Errore nel download. Controlla la tua connessione ad internet e riprova tornando al menù principale.</string>
     <string name="nointernet">Nessuna connessione Internet. Questa app necessita di una connessione Internet attiva per funzionare!</string>
     <string name="forms">Modulistica</string>
     <string name="parttimerequest">Richiesta part-time</string>
@@ -32,4 +32,5 @@
     <string name="domanda_laurea">Domanda esame di laurea</string>
     <string name="esami_scelta">Modulo richiesta esami a scelta</string>
     <string name="domand_laurea">domanda esame di laurea e richiesta pergamena</string>
+    <string name="ITEM_6">Ricarica</string>
 </resources>

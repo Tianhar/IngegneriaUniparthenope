@@ -1,8 +1,11 @@
 package com.example.simon.ingegneriauniparthenope;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 
 public class Utility {
@@ -17,5 +20,21 @@ public class Utility {
         } catch (PackageManager.NameNotFoundException ignored) {
         }
         return new Intent(Intent.ACTION_VIEW, uri);
+    }
+
+    public static int checkConnectivity(Context context) {
+        boolean enabled = true;
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = connectivityManager.getActiveNetworkInfo();
+        int internet;
+        if ((info == null || !info.isConnected() || !info.isAvailable())) {
+            internet = 0;//sin connessione
+            enabled = false;
+        } else {
+            internet = 1;//connessione
+        }
+
+        return internet;
     }
 }

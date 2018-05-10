@@ -33,7 +33,7 @@
     <string name="UTIL_7">Department Site</string>
     <string name="noNNews">No older news</string>
     <string name="staff">Staff</string>
-    <string name="downloaderror">Download error</string>
+    <string name="downloaderror">Download error. Check your internet connection and try again by going back to the main menu.</string>
     <string name="nointernet">No Internet connection. This app needs an active internet connection to work as intended!</string>
     <string name="forms">Forms</string>
     <string name="parttimerequest">Part-time request</string>
@@ -44,4 +44,5 @@
     <string name="domanda_laurea">Graduation exam application</string>
     <string name="esami_scelta">exam request form chosen</string>
     <string name="domand_laurea">graduation exam application and parchment request</string>
+    <string name="ITEM_6">Reload</string>
 </resources>
