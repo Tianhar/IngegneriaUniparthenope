@@ -31,6 +31,9 @@
             android:id="@+id/bottoneLearning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:textColor="@android:color/background_light"
             android:backgroundTint="@color/colorAccent"
             android:text="@string/UTIL_2" />
 
@@ -39,12 +42,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorAccent"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:textColor="@android:color/background_light"
             android:text="@string/UTIL_1" />
 
         <Button
             android:id="@+id/bottoneEsse3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:textColor="@android:color/background_light"
             android:backgroundTint="@color/colorAccent"
             android:text="@string/UTIL_5" />
 
@@ -52,6 +61,9 @@
             android:id="@+id/bottoneSitoAteneo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:textColor="@android:color/background_light"
             android:backgroundTint="@color/colorAccent"
             android:text="@string/UTIL_6" />
 
@@ -59,6 +71,9 @@
             android:id="@+id/bottoneSitoDip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:textColor="@android:color/background_light"
             android:backgroundTint="@color/colorAccent"
             android:text="@string/UTIL_7" />
 
