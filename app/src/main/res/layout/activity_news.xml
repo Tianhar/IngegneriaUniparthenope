@@ -9,7 +9,9 @@
         android:id="@+id/srollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true">
+        android:clickable="true"
+        android:focusable="true"
+        android:longClickable="true">
 
         <LinearLayout
             android:id="@+id/verticalLayout"
@@ -62,14 +64,15 @@
                 android:id="@+id/result"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:autoLink="web"
+                android:autoLink="all"
                 android:clickable="true"
                 android:linksClickable="true"
-                android:longClickable="true"
                 android:paddingTop="10dp"
                 android:text="@string/news"
                 android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textIsSelectable="true"
+                android:focusable="true"
+                android:longClickable="true"
                 android:textSize="24sp" />
 
         </LinearLayout>
