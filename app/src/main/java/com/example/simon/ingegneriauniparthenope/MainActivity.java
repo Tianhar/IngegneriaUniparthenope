@@ -17,11 +17,15 @@ import android.widget.Toast;
 import static com.example.simon.ingegneriauniparthenope.Utility.checkConnectivity;
 import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookIntent;
 
+
 public class MainActivity extends AppCompatActivity {
 
     public static NewsDownloader newsd = (NewsDownloader) new NewsDownloader().execute();
     public static ProfDownloader profd = (ProfDownloader) new ProfDownloader().execute();
     public static TechDownloader techd = (TechDownloader) new TechDownloader().execute();
+    public static Boolean indownloadn = true;
+    public static Boolean indownloadt = true;
+    public static Boolean indownloadp = true;
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

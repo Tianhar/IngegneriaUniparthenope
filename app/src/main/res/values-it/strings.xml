@@ -33,4 +33,5 @@
     <string name="esami_scelta">Modulo richiesta esami a scelta</string>
     <string name="domand_laurea">domanda esame di laurea e richiesta pergamena</string>
     <string name="ITEM_6">Ricarica</string>
+    <string name="downloadingStatus">In Download</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.simon.ingegneriauniparthenope.MainActivity.indownloadn;
 import static com.example.simon.ingegneriauniparthenope.MainActivity.newsd;
 
 
@@ -35,6 +37,7 @@ public class NewsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final TextView result = (TextView) findViewById(R.id.result);
+        result.setMovementMethod(LinkMovementMethod.getInstance());
         final TextView title = (TextView) findViewById(R.id.title);
         final View scroll = (View) findViewById(R.id.srollView);
         final View layout = (View) findViewById(R.id.verticalLayout);
@@ -128,9 +131,20 @@ public class NewsActivity extends AppCompatActivity {
             }
         });
 
+        if (newsd.downloadStatus == 0) {
+            finish();
+            overridePendingTransition(0, 0);
+            startActivity(getIntent());
+            overridePendingTransition(0, 0);
+            if (indownloadn == true) {
+                Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
+                indownloadn = false;
+            }
+        }
+
         if (newsd.erroreDownload == true) {
             Toast.makeText(getApplicationContext(), R.string.downloaderror, Toast.LENGTH_SHORT).show();
-        } else {
+        } else if (newsd.downloadStatus == 1) {
             Toast.makeText(getApplicationContext(), R.string.newsIndication, Toast.LENGTH_SHORT).show();
         }
 

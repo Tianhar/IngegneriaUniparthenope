@@ -45,4 +45,5 @@
     <string name="esami_scelta">exam request form chosen</string>
     <string name="domand_laurea">graduation exam application and parchment request</string>
     <string name="ITEM_6">Reload</string>
+    <string name="downloadingStatus">Downloading</string>
 </resources>

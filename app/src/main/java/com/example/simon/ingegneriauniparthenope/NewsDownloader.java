@@ -42,11 +42,31 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
                 newsTitolo.add(titles.text().substring(darimuovere + 1));
                 Elements contenuto = link.getElementsByTag("p");
                 Elements list = link.getElementsByTag("li");
+
+                for (Element ancor : link.select("a")) {
+                    
+                    if (ancor.attr("href").substring(0, 1).equals(".")) {
+                        ancor.text(ancor.text() + " (" + "http://www.ingegneria.uniparthenope.it" + (ancor.attr("href").substring(1)) + ")");
+                    } else if (ancor.attr("href").equals(ancor.text())) {
+                        //Non fa niente
+                    } else ancor.text(ancor.text() + " (" + ancor.attr("href") + ")");
+                }
                 builder.append(contenuto.text()).append("\n");
                 int ii = 1;
+
                 for (Element liste : list) {
                     builder.append("\n").append("" + ii + "- " + liste.text()).append("\n");
                     ii++;
+                }
+
+                link.select("p").remove();
+                link.select("h4").remove();
+                link.select("ol").remove();
+                link.select("ul").remove();
+                Elements collegamenti = link.getElementsByTag("a");
+                for (Element coll : collegamenti) {
+                    builder.append("\n").append(coll.text()).append("\n");
+
                 }
                 newsCorpo.add(builder.toString());
             }

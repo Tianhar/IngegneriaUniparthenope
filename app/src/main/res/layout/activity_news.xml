@@ -8,7 +8,8 @@
     <ScrollView
         android:id="@+id/srollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clickable="true">
 
         <LinearLayout
             android:id="@+id/verticalLayout"
@@ -47,6 +48,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:linksClickable="true"
+                android:longClickable="true"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:textColor="@color/colorPrimaryDark"
@@ -58,6 +62,10 @@
                 android:id="@+id/result"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autoLink="web"
+                android:clickable="true"
+                android:linksClickable="true"
+                android:longClickable="true"
                 android:paddingTop="10dp"
                 android:text="@string/news"
                 android:textColor="@color/common_google_signin_btn_text_light_pressed"

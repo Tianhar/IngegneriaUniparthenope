@@ -9,6 +9,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.simon.ingegneriauniparthenope.MainActivity.indownloadt;
 import static com.example.simon.ingegneriauniparthenope.MainActivity.techd;
 
 public class TechActivity extends AppCompatActivity {
@@ -47,6 +48,16 @@ public class TechActivity extends AppCompatActivity {
             }
         });
 
+        if (techd.downloadStatus == 0) {
+            finish();
+            overridePendingTransition(0, 0);
+            startActivity(getIntent());
+            overridePendingTransition(0, 0);
+            if (indownloadt == true) {
+                Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
+                indownloadt = false;
+            }
+        }
         if (techd.erroreDownload == true) {
             Toast.makeText(getApplicationContext(), R.string.downloaderror, Toast.LENGTH_SHORT).show();
         }
