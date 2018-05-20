@@ -64,7 +64,7 @@
                 android:id="@+id/result"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:autoLink="all"
+                android:autoLink="web|email"
                 android:clickable="true"
                 android:linksClickable="true"
                 android:paddingTop="10dp"
