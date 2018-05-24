@@ -46,7 +46,7 @@ public class TechDownloader extends AsyncTask<Void, Void, Void> {
                     studio.add(" ");
                     email.add(" ");
                 }
-
+                erroreDownload = false;
             }
         } catch (IOException e) {
             erroreDownload = true;

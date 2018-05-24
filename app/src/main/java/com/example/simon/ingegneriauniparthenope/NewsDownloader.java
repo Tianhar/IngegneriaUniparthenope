@@ -47,7 +47,7 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
                     ancor.attr("href", ancor.attr("href").replace(" ", "%20"));
                     if (ancor.attr("href").substring(0, 1).equals(".")) {
                         ancor.text(ancor.text() + " ( " + "http://www.ingegneria.uniparthenope.it" + (ancor.attr("href").substring(1)) + " ) ");
-                    } else if (ancor.attr("href").equals(ancor.text())) {
+                    } else if (ancor.attr("href").equals(ancor.text()) || (ancor.attr("href").equals("mailto:" + ancor.text()))) {
                         //Non fa niente
                     } else ancor.text(ancor.text() + " ( " + ancor.attr("href") + " ) ");
                 }
@@ -69,6 +69,7 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
 
                 }
                 newsCorpo.add(builder.toString());
+                erroreDownload = false;
             }
         } catch (IOException e) {
             erroreDownload = true;

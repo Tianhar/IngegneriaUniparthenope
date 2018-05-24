@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static Boolean indownloadt = true;
     public static Boolean indownloadp = true;
 
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
@@ -155,12 +156,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if ((checkConnectivity(this) == 1) && ((newsd.downloadStatus == 2) || (newsd.downloadStatus == 3))) {
+            newsd.newsTitolo.clear();
+            newsd.newsCorpo.clear();
+            newsd.newsData.clear();
             newsd = (NewsDownloader) new NewsDownloader().execute();
         }
         if ((checkConnectivity(this) == 1) && ((profd.downloadStatus == 2) || (profd.downloadStatus == 3))) {
+            profd.nome.clear();
+            profd.telefono.clear();
+            profd.email.clear();
+            profd.studio.clear();
             profd = (ProfDownloader) new ProfDownloader().execute();
         }
         if ((checkConnectivity(this) == 1) && ((techd.downloadStatus == 2) || (techd.downloadStatus == 3))) {
+            techd.nome.clear();
+            techd.telefono.clear();
+            techd.email.clear();
+            techd.studio.clear();
             techd = (TechDownloader) new TechDownloader().execute();
         }
 

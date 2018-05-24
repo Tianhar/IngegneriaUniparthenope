@@ -22,6 +22,7 @@ import static com.example.simon.ingegneriauniparthenope.MainActivity.newsd;
 public class NewsActivity extends AppCompatActivity {
     int newsIndex = 0;
 
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu2, menu);
@@ -146,6 +147,7 @@ public class NewsActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), R.string.downloaderror, Toast.LENGTH_SHORT).show();
         } else if (newsd.downloadStatus == 1) {
             Toast.makeText(getApplicationContext(), R.string.newsIndication, Toast.LENGTH_SHORT).show();
+
         }
 
     }
