@@ -12,9 +12,12 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 
-//Effettua il download del personale docenti
+
 
 public class TechDownloader extends AsyncTask<Void, Void, Void> {
+    /**
+     * Dichiarazione Array per personale docenti
+     */
     static public ArrayList<String> nome = new ArrayList<String>();
     static public ArrayList<String> telefono = new ArrayList<String>();
     static public ArrayList<String> studio = new ArrayList<String>();
