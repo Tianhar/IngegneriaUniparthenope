@@ -61,4 +61,5 @@
     <string name="techfile_studio" translatable="false">techstudio</string>
     <string name="techfile_email" translatable="false">techemail</string>
     <string name="cant">No internet connection and no file to load found</string>
+    <string name="pos_not_allowed">Access to the position is not allowed. Path from Napoli Centrale Station</string>
 </resources>

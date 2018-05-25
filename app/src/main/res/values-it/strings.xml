@@ -37,5 +37,5 @@
     <string name="mypos">La tua posizione</string>
     <string name="noposition">Posizione corrente non trovata. Percorso da Stazione Napoli Centrale</string>
     <string name="yesposition">Percorso partendo dalla tua posizione corrente</string>
-    <string name="cant">Nessuna connessione a internet e nessun file da caricare</string>
+    <string name="pos_not_allowed">Accesso alla posizione non consentito. Percorso da Stazione Napoli Centrale</string>
 </resources>

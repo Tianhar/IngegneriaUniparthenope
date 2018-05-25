@@ -112,7 +112,7 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.simon.ingegneriauniparthenope.MainActivity" />
 
-        <service android:name=".GPSTracker" />
+
     </application>
 
 </manifest>
