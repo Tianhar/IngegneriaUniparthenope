@@ -14,8 +14,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.io.File;
+
 import static com.example.simon.ingegneriauniparthenope.Utility.checkConnectivity;
+import static com.example.simon.ingegneriauniparthenope.Utility.getSavedArrayList;
 import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookIntent;
+import static com.example.simon.ingegneriauniparthenope.Utility.saveArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
     public static NewsDownloader newsd = (NewsDownloader) new NewsDownloader().execute();
     public static ProfDownloader profd = (ProfDownloader) new ProfDownloader().execute();
     public static TechDownloader techd = (TechDownloader) new TechDownloader().execute();
-    public static Boolean indownloadn = true;
-    public static Boolean indownloadt = true;
-    public static Boolean indownloadp = true;
+    public static Boolean insavingn = true;
+    public static Boolean insavingt = true;
+    public static Boolean insavingp = true;
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -51,6 +56,105 @@ public class MainActivity extends AppCompatActivity {
 
         if (checkConnectivity(this) == 0) {
             Toast.makeText(getApplicationContext(), R.string.nointernet, Toast.LENGTH_LONG).show();
+            if ((newsd.newsData.size() == 0) && (profd.nome.size() == 0) && (techd.nome.size() == 0) && (newsd.downloadStatus != 0) && (profd.downloadStatus != 0) && (techd.downloadStatus != 0)) {
+                String pathndata = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.newsfile_data);
+                String pathntitolo = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.newsfile_titolo);
+                String pathncontenuto = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.newsfile_contenuto);
+
+                String pathpnome = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.proffile_nome);
+                String pathpemail = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.proffile_email);
+                String pathpstudio = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.proffile_studio);
+                String pathptelefono = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.proffile_telefono);
+
+                String pathtnome = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.techfile_nome);
+                String pathtemail = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.techfile_email);
+                String pathtstudio = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.techfile_studio);
+                String pathttelefono = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.techfile_telefono);
+
+                //Per le news
+                File filen1 = new File(pathndata);
+                File filen2 = new File(pathntitolo);
+                File filen3 = new File(pathncontenuto);
+
+                //Per i prof
+                File filep1 = new File(pathpnome);
+                File filep2 = new File(pathpemail);
+                File filep3 = new File(pathpstudio);
+                File filep4 = new File(pathptelefono);
+
+                //Per il personale tecnico-amministrativo
+                File filet1 = new File(pathtnome);
+                File filet2 = new File(pathtemail);
+                File filet3 = new File(pathtstudio);
+                File filet4 = new File(pathttelefono);
+
+                if ((filen1.exists()) && (filen2.exists()) && (filen3.exists())) {
+                    newsd.newsTitolo = getSavedArrayList(this, getResources().getString(R.string.newsfile_titolo));
+                    newsd.newsCorpo = getSavedArrayList(this, getResources().getString(R.string.newsfile_contenuto));
+                    newsd.newsData = getSavedArrayList(this, getResources().getString(R.string.newsfile_data));
+                }
+
+                if ((filep1.exists()) && (filep2.exists()) && (filep3.exists()) && (filep4.exists())) {
+                    profd.nome = getSavedArrayList(this, getResources().getString(R.string.proffile_nome));
+                    profd.telefono = getSavedArrayList(this, getResources().getString(R.string.proffile_telefono));
+                    profd.email = getSavedArrayList(this, getResources().getString(R.string.proffile_email));
+                    profd.studio = getSavedArrayList(this, getResources().getString(R.string.proffile_studio));
+                }
+
+                if ((filet1.exists()) && (filet2.exists()) && (filet3.exists()) && (filet4.exists())) {
+                    techd.nome = getSavedArrayList(this, getResources().getString(R.string.techfile_nome));
+                    techd.telefono = getSavedArrayList(this, getResources().getString(R.string.techfile_telefono));
+                    techd.email = getSavedArrayList(this, getResources().getString(R.string.techfile_email));
+                    techd.studio = getSavedArrayList(this, getResources().getString(R.string.techfile_studio));
+                }
+            }
+        }
+
+        if ((checkConnectivity(this) == 1) && ((newsd.downloadStatus == 2) || (newsd.downloadStatus == 3))) {
+            newsd.newsTitolo.clear();
+            newsd.newsCorpo.clear();
+            newsd.newsData.clear();
+            newsd = (NewsDownloader) new NewsDownloader().execute();
+        }
+        if ((checkConnectivity(this) == 1) && ((profd.downloadStatus == 2) || (profd.downloadStatus == 3))) {
+            profd.nome.clear();
+            profd.telefono.clear();
+            profd.email.clear();
+            profd.studio.clear();
+            profd = (ProfDownloader) new ProfDownloader().execute();
+        }
+        if ((checkConnectivity(this) == 1) && ((techd.downloadStatus == 2) || (techd.downloadStatus == 3))) {
+            techd.nome.clear();
+            techd.telefono.clear();
+            techd.email.clear();
+            techd.studio.clear();
+            techd = (TechDownloader) new TechDownloader().execute();
+        }
+
+        if ((checkConnectivity(this) == 1) && (techd.downloadStatus == 1) && (techd.erroreDownload == false) && (insavingt == true)) {
+            //Salvo
+            saveArrayList(this, techd.nome, getResources().getString(R.string.techfile_nome));
+            saveArrayList(this, techd.telefono, getResources().getString(R.string.techfile_telefono));
+            saveArrayList(this, techd.email, getResources().getString(R.string.techfile_email));
+            saveArrayList(this, techd.studio, getResources().getString(R.string.techfile_studio));
+            insavingt = false;
+        }
+
+        if ((checkConnectivity(this) == 1) && (profd.downloadStatus == 1) && (profd.erroreDownload == false) && (insavingp == true)) {
+            //Salvo
+            saveArrayList(this, profd.nome, getResources().getString(R.string.proffile_nome));
+            saveArrayList(this, profd.telefono, getResources().getString(R.string.proffile_telefono));
+            saveArrayList(this, profd.email, getResources().getString(R.string.proffile_email));
+            saveArrayList(this, profd.studio, getResources().getString(R.string.proffile_studio));
+            insavingp = false;
+        }
+
+        if ((checkConnectivity(this) == 1) && (newsd.downloadStatus == 1) && (newsd.erroreDownload == false) && (insavingn == true)) {
+            //Salvo
+            saveArrayList(this, newsd.newsData, getResources().getString(R.string.newsfile_data));
+            saveArrayList(this, newsd.newsTitolo, getResources().getString(R.string.newsfile_titolo));
+            saveArrayList(this, newsd.newsCorpo, getResources().getString(R.string.newsfile_contenuto));
+            insavingn = false;
         }
 
         ImageButton bottoneCS = (ImageButton) findViewById(R.id.buttonStudenti);
@@ -67,7 +171,20 @@ public class MainActivity extends AppCompatActivity {
         bottoneNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, NewsActivity.class));
+                if ((newsd.downloadStatus == 0)) {
+                    Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
+                } else if (newsd.newsData.isEmpty() == false) {
+                    if ((checkConnectivity(MainActivity.this) == 1) && (newsd.erroreDownload == false) && (insavingn == true)) {
+                        //Salvo
+                        saveArrayList(MainActivity.this, newsd.newsData, getResources().getString(R.string.newsfile_data));
+                        saveArrayList(MainActivity.this, newsd.newsTitolo, getResources().getString(R.string.newsfile_titolo));
+                        saveArrayList(MainActivity.this, newsd.newsCorpo, getResources().getString(R.string.newsfile_contenuto));
+                        insavingn = false;
+                    }
+                    startActivity(new Intent(MainActivity.this, NewsActivity.class));
+                } else
+                    Toast.makeText(getApplicationContext(), R.string.cant, Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -76,7 +193,21 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ProfActivity.class));
+                if ((profd.downloadStatus == 0)) {
+                    Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
+                } else if (profd.nome.isEmpty() == false) {
+                    if ((checkConnectivity(MainActivity.this) == 1) && (profd.downloadStatus == 1) && (profd.erroreDownload == false) && (insavingp == true)) {
+                        //Salvo
+                        saveArrayList(MainActivity.this, profd.nome, getResources().getString(R.string.proffile_nome));
+                        saveArrayList(MainActivity.this, profd.telefono, getResources().getString(R.string.proffile_telefono));
+                        saveArrayList(MainActivity.this, profd.email, getResources().getString(R.string.proffile_email));
+                        saveArrayList(MainActivity.this, profd.studio, getResources().getString(R.string.proffile_studio));
+                        insavingp = false;
+                    }
+                    startActivity(new Intent(MainActivity.this, ProfActivity.class));
+                } else
+                    Toast.makeText(getApplicationContext(), R.string.cant, Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -98,7 +229,21 @@ public class MainActivity extends AppCompatActivity {
         bottoneTech.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, TechActivity.class));
+                if ((techd.downloadStatus == 0)) {
+                    Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
+                } else if (techd.nome.isEmpty() == false) {
+                    if ((checkConnectivity(MainActivity.this) == 1) && (techd.downloadStatus == 1) && (techd.erroreDownload == false) && (insavingt == true)) {
+                        //Salvo
+                        saveArrayList(MainActivity.this, techd.nome, getResources().getString(R.string.techfile_nome));
+                        saveArrayList(MainActivity.this, techd.telefono, getResources().getString(R.string.techfile_telefono));
+                        saveArrayList(MainActivity.this, techd.email, getResources().getString(R.string.techfile_email));
+                        saveArrayList(MainActivity.this, techd.studio, getResources().getString(R.string.techfile_studio));
+                        insavingt = false;
+                    }
+                    startActivity(new Intent(MainActivity.this, TechActivity.class));
+                } else
+                    Toast.makeText(getApplicationContext(), R.string.cant, Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -145,6 +290,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.ITEM_6:
                 Intent refresh = new Intent(this, MainActivity.class);
+                refresh.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(refresh);
                 this.finish();
                 break;

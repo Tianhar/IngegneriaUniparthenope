@@ -15,7 +15,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static com.example.simon.ingegneriauniparthenope.MainActivity.indownloadn;
 import static com.example.simon.ingegneriauniparthenope.MainActivity.newsd;
 
 
@@ -132,23 +131,12 @@ public class NewsActivity extends AppCompatActivity {
             }
         });
 
-        if (newsd.downloadStatus == 0) {
-            finish();
-            overridePendingTransition(0, 0);
-            startActivity(getIntent());
-            overridePendingTransition(0, 0);
-            if (indownloadn == true) {
-                Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
-                indownloadn = false;
-            }
-        }
 
-        if (newsd.erroreDownload == true) {
-            Toast.makeText(getApplicationContext(), R.string.downloaderror, Toast.LENGTH_SHORT).show();
-        } else if (newsd.downloadStatus == 1) {
+        if (newsd.newsData.isEmpty() == false) {
             Toast.makeText(getApplicationContext(), R.string.newsIndication, Toast.LENGTH_SHORT).show();
 
         }
+
 
     }
 

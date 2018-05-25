@@ -8,6 +8,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
 public class Utility {
     //Connessione a Facebook
     public static Intent newFacebookIntent(PackageManager pm, String url) {
@@ -36,5 +43,35 @@ public class Utility {
         }
 
         return internet;
+    }
+
+    public static void saveArrayList(Context context, ArrayList<String> arrayList, String nomefile) {
+        try {
+            FileOutputStream fileOutputStream = context.openFileOutput(nomefile, Context.MODE_PRIVATE);
+            ObjectOutputStream out = new ObjectOutputStream(fileOutputStream);
+            out.writeObject(arrayList);
+            out.close();
+            fileOutputStream.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static ArrayList<String> getSavedArrayList(Context context, String nomefile) {
+        ArrayList<String> savedArrayList = null;
+
+        try {
+            FileInputStream inputStream = context.openFileInput(nomefile);
+            ObjectInputStream in = new ObjectInputStream(inputStream);
+            savedArrayList = (ArrayList<String>) in.readObject();
+            in.close();
+            inputStream.close();
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return savedArrayList;
     }
 }

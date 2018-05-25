@@ -86,7 +86,6 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
             if ((downloadStatus == 1) && (erroreDownload == false) && (newsData.size() == 0)) {
                 downloadStatus = 3;
             }
-
         }
     }
 

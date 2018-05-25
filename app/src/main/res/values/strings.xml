@@ -49,4 +49,16 @@
     <string name="mypos">My position</string>
     <string name="noposition">Current position not found. Path from Napoli Centrale Station</string>
     <string name="yesposition">Path from your current position</string>
+    <string name="newsfile_data" translatable="false">newsdata</string>
+    <string name="newsfile_titolo" translatable="false">newstitolo</string>
+    <string name="newsfile_contenuto" translatable="false">newscontenuto</string>
+    <string name="proffile_nome" translatable="false">profnome</string>
+    <string name="proffile_telefono" translatable="false">proftelefono</string>
+    <string name="proffile_studio" translatable="false">profstudio</string>
+    <string name="proffile_email" translatable="false">profemail</string>
+    <string name="techfile_nome" translatable="false">technome</string>
+    <string name="techfile_telefono" translatable="false">techtelefono</string>
+    <string name="techfile_studio" translatable="false">techstudio</string>
+    <string name="techfile_email" translatable="false">techemail</string>
+    <string name="cant">No internet connection and no file to load found</string>
 </resources>
