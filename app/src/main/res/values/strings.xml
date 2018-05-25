@@ -46,4 +46,7 @@
     <string name="domand_laurea">graduation exam application and parchment request</string>
     <string name="ITEM_6">Reload</string>
     <string name="downloadingStatus">Downloading</string>
+    <string name="mypos">My position</string>
+    <string name="noposition">Current position not found. Path from Napoli Centrale Station</string>
+    <string name="yesposition">Path from your current position</string>
 </resources>

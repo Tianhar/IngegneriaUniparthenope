@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     public static Boolean indownloadt = true;
     public static Boolean indownloadp = true;
 
-
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
@@ -37,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Intent intentgpservice=new Intent(MainActivity.this,GPSTracker.class);
+//startService(intentgpservice);
         setContentView(R.layout.activity_main);
 
 
