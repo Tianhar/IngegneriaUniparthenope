@@ -61,5 +61,8 @@
     <string name="techfile_studio" translatable="false">techstudio</string>
     <string name="techfile_email" translatable="false">techemail</string>
     <string name="cant">No internet connection and no file to load found</string>
-    <string name="pos_not_allowed">Access to the position is not allowed. Path from Napoli Centrale Station</string>
+    <string name="pos_not_allowed">Access to the position is not allowed. Path from Garibaldi Square Station</string>
+    <string name="yourposition">Your position</string>
+    <string name="garibaldi">Garibaldi Place Station</string>
+    <string name="universityposition">Department of engineering - Parthenope University</string>
 </resources>

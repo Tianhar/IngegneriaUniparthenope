@@ -35,7 +35,10 @@
     <string name="ITEM_6">Ricarica</string>
     <string name="downloadingStatus">In Download</string>
     <string name="mypos">La tua posizione</string>
-    <string name="noposition">Posizione corrente non trovata. Percorso da Stazione Napoli Centrale</string>
+    <string name="noposition">Posizione corrente non trovata. Percorso da Stazione Piazza Garibaldi</string>
     <string name="yesposition">Percorso partendo dalla tua posizione corrente</string>
-    <string name="pos_not_allowed">Accesso alla posizione non consentito. Percorso da Stazione Napoli Centrale</string>
+    <string name="pos_not_allowed">Accesso alla posizione non consentito. Percorso da Stazione Piazza Garibaldi</string>
+    <string name="yourposition">La tua posizione</string>
+    <string name="garibaldi">Stazione Piazza Garibaldi</string>
+    <string name="universityposition">Dipartimento di Ingegneria - Università Parthenope</string>
 </resources>

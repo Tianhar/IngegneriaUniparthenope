@@ -72,7 +72,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
             if (!isGPSEnabled && !isNetworkEnabled) {
                 Toast.makeText(this, getString(R.string.noposition), Toast.LENGTH_LONG).show();
-                return l = new LatLng(40.853170, 14.272306); //se non abilitato posizione = Stazione Napoli Centrale
+                return l = new LatLng(40.852485, 14.272148); //se non abilitato posizione = Stazione P.zza Garibaldi
 
             } else {
 
@@ -80,7 +80,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if (isGPSEnabled) {
                     if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                         Toast.makeText(this, getString(R.string.pos_not_allowed), Toast.LENGTH_LONG).show();
-                        return l = new LatLng(40.853170, 14.272306);
+                        return l = new LatLng(40.852485, 14.272148);
                     }
                     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
                             MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
@@ -88,12 +88,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                         if (location == null) {
                             Toast.makeText(this, getString(R.string.noposition), Toast.LENGTH_LONG).show();
-                            l = new LatLng(40.853170, 14.272306);
+                            l = new LatLng(40.852485, 14.272148);
                             return l;
 
                         } else if (location.getLatitude() == 0.0 || location.getLongitude() == 0.0) {
                             Toast.makeText(this, getString(R.string.noposition), Toast.LENGTH_LONG).show();
-                            return new LatLng(40.853170, 14.272306);
+                            return new LatLng(40.852485, 14.272148);
                         } else
                             Toast.makeText(this, getString(R.string.yesposition), Toast.LENGTH_LONG).show();
                         return new LatLng(location.getLatitude(), location.getLongitude());
@@ -107,7 +107,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         return l;
                     } else {
                         Toast.makeText(this, getString(R.string.noposition), Toast.LENGTH_LONG).show();
-                        return l = new LatLng(40.853170, 14.272306);
+                        return l = new LatLng(40.852485, 14.272148);
                     }
                 }
             }
@@ -116,7 +116,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             e.printStackTrace();
         }
         Toast.makeText(this, getString(R.string.noposition), Toast.LENGTH_LONG).show();
-        return l = new LatLng(40.853170, 14.272306);
+        return l = new LatLng(40.852485, 14.272148);
     }
 
 
@@ -133,8 +133,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng destination = new LatLng(40.857094, 14.284117);
         DrawRouteMaps.getInstance(this)
                 .draw(position, destination, mMap);
-        DrawMarker.getInstance(this).draw(mMap, position, R.drawable.marker_a, "La tua posizione");
-        DrawMarker.getInstance(this).draw(mMap, destination, R.drawable.marker_b, "Dipartimento di Ingegneria - Università Parthenope");
+        if (position.latitude != 40.852485 && position.longitude != 14.272148)
+            DrawMarker.getInstance(this).draw(mMap, position, R.drawable.marker_a, getString(R.string.yourposition));
+        else
+            DrawMarker.getInstance(this).draw(mMap, position, R.drawable.marker_a, getString(R.string.garibaldi));
+        DrawMarker.getInstance(this).draw(mMap, destination, R.drawable.marker_b, getString(R.string.universityposition));
 
         LatLngBounds bounds = new LatLngBounds.Builder()
                 .include(position)
