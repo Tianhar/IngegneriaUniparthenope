@@ -18,13 +18,36 @@ import static com.example.simon.ingegneriauniparthenope.Utility.checkConnectivit
 import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookIntent;
 
 
+/**
+ * Main activity
+ *
+ * @author Gruppo
+ */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Avvia il task che scarica le news
+     */
     public static NewsDownloader newsd = (NewsDownloader) new NewsDownloader().execute();
+    /**
+     * Avvia il task che scarica i prof.
+     */
     public static ProfDownloader profd = (ProfDownloader) new ProfDownloader().execute();
+    /**
+     * Avvia il task che scarica il personale
+     */
     public static TechDownloader techd = (TechDownloader) new TechDownloader().execute();
+    /**
+     * Avvia il task che scarica parametri
+     */
     public static Boolean indownloadn = true;
+    /**
+     * The constant indownloadt.
+     */
     public static Boolean indownloadt = true;
+    /**
+     * The constant indownloadp.
+     */
     public static Boolean indownloadp = true;
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,7 +56,14 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Metodo che crea e inizializza l'activity principale
+     *
+     * @param savedInstanceState
+     */
     @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Intent intentgpservice=new Intent(MainActivity.this,GPSTracker.class);
@@ -53,9 +83,15 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), R.string.nointernet, Toast.LENGTH_LONG).show();
         }
 
+
         ImageButton bottoneCS = (ImageButton) findViewById(R.id.buttonStudenti);
 
+
         bottoneCS.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Metodo per parsing sito cartastudenti al relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.cartastudenti.org/?m=1"));
@@ -65,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottoneNews.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Metodo che fa partire NewsActivity con relativo bottone.
+             * @param v
+             */
+
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, NewsActivity.class));
@@ -73,6 +114,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottoneProf.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Metodo che fa partire ProfActivity con relativo bottone.
+             *
+             */
 
             @Override
             public void onClick(View v) {
@@ -81,6 +126,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         bottoneUtiliy.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Metodo che fa partire LinkActivity con relativo bottone.
+             *
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LinkActivity.class));
@@ -89,6 +138,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottoneLessons.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Metodo che fa partire LessonsActivity con relativo bottone.
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LessonsActivity.class));
@@ -96,6 +149,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         bottoneTech.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Metodo che fa partire TechActivity con relativo bottone.
+             *
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, TechActivity.class));
@@ -103,6 +160,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         bottoneMod.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Metodo che fa partire ModulisticaActivity con relativo bottone.
+             *
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ModulisticaActivity.class));
@@ -112,6 +173,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * inizializza e gestisce menù a tendina
+     *
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -126,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(fbconn);
                 break;
             case R.id.ITEM_3:
+
                 final AlertDialog.Builder alertinfo = new AlertDialog.Builder(MainActivity.this);
                 alertinfo.setTitle("Info").setMessage(getString(R.string.infoapp)).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -153,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    /** Metodo verifica conessione e riesegue task download di prof news e tech*/
     @Override
     protected void onResume() {
         super.onResume();

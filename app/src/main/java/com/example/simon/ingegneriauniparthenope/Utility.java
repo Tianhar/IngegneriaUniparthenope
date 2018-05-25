@@ -8,10 +8,24 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 
+/**
+ * The type Utility.
+ */
 public class Utility {
-    //Connessione a Facebook
+    /**
+     * New facebook intent intent.
+     *
+     * @param pm  the pm
+     * @param url the url
+     * @return the intent
+     */
+    /**
+     * Connessione a Facebook
+     */
+
     public static Intent newFacebookIntent(PackageManager pm, String url) {
         Uri uri = Uri.parse(url);
+
         try {
             ApplicationInfo applicationInfo = pm.getApplicationInfo("com.facebook.katana", 0);
             if (applicationInfo.enabled) {
@@ -22,6 +36,12 @@ public class Utility {
         return new Intent(Intent.ACTION_VIEW, uri);
     }
 
+    /**
+     * Check connectivity int.
+     *
+     * @param context the context
+     * @return the int
+     */
     public static int checkConnectivity(Context context) {
         boolean enabled = true;
 

@@ -14,6 +14,9 @@ import java.util.ArrayList;
 
 
 public class NewsDownloader extends AsyncTask<Void, Void, Void> {
+    /**
+     * Dichiarazione ArrayList di Data, Titolo e corpo
+     */
     public static ArrayList<String> newsData = new ArrayList<String>();
     public static ArrayList<String> newsTitolo = new ArrayList<String>();
     public static ArrayList<String> newsCorpo = new ArrayList<String>();
@@ -77,6 +80,10 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
         downloadStatus = 1;
         return null;
     }
+
+    /**
+     * Metodo che setta lo stato del download per eventuali errori
+     */
 
     @Override
     protected void onPostExecute(Void voids) {

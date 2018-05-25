@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class ModulisticaActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,13 @@ public class ModulisticaActivity extends AppCompatActivity {
         Button bottoneMod7 = (Button) findViewById(R.id.buttonModulo7);
 
 
+
         bottoneMod1.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing con modulistica del relativo bottone
+             *
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/studenti/doc_studenti/part.pdf"));
@@ -34,6 +41,10 @@ public class ModulisticaActivity extends AppCompatActivity {
         });
 
         bottoneMod2.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing con modulistica del relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/studenti/doc_studenti/handicap.pdf"));
@@ -42,6 +53,10 @@ public class ModulisticaActivity extends AppCompatActivity {
         });
 
         bottoneMod3.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing con modulistica del relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/studenti/doc_studenti/rinuncia.pdf"));
@@ -50,6 +65,10 @@ public class ModulisticaActivity extends AppCompatActivity {
         });
 
         bottoneMod4.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing con modulistica del relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/studenti/doc_studenti/decadenza.pdf"));
@@ -58,6 +77,10 @@ public class ModulisticaActivity extends AppCompatActivity {
         });
 
         bottoneMod5.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing con modulistica del relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/studenti/doc_studenti/modulo_richiesta_certificati.pdf"));
@@ -66,6 +89,10 @@ public class ModulisticaActivity extends AppCompatActivity {
         });
 
         bottoneMod6.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing con modulistica del relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/studenti/doc_studenti/DOMANDA_PARTECIPAZIONE_SEDUTA_DI_LAUREA.pdf"));
@@ -74,6 +101,10 @@ public class ModulisticaActivity extends AppCompatActivity {
         });
 
         bottoneMod7.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing con modulistica del relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/studenti/doc_studenti/Mod_rich_esami_a_scelta.pdf"));

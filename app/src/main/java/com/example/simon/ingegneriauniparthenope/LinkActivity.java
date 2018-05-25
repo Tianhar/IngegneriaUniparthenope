@@ -10,8 +10,18 @@ import android.widget.Button;
 import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookIntent;
 
 
+/**
+ * The type Link activity.
+ */
+
 public class LinkActivity extends AppCompatActivity {
+    /**
+     * metodo OnCreate che istanzia ActivityLink
+     *
+     * @param savedInstanceState
+     */
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link);
@@ -27,6 +37,11 @@ public class LinkActivity extends AppCompatActivity {
 
 
         bottone_Gruppo.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing gruppo facebook con relativo bottone
+             *
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent fbconn = newFacebookIntent(getPackageManager(), "https://it-it.facebook.com/ingegneria.uniparthenope/");
@@ -35,6 +50,10 @@ public class LinkActivity extends AppCompatActivity {
         });
 
         bottone_Learning.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing sito del dipartimento con realitvo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://edi.uniparthenope.it/"));
@@ -43,6 +62,10 @@ public class LinkActivity extends AppCompatActivity {
         });
 
         bottone_esse3.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing sito supporto università con relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://uniparthenope.esse3.cineca.it/Home.do"));
@@ -51,6 +74,10 @@ public class LinkActivity extends AppCompatActivity {
         });
 
         bottone_ateneo.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing siuto università con relativo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uniparthenope.it/"));
@@ -59,6 +86,10 @@ public class LinkActivity extends AppCompatActivity {
         });
 
         bottone_dip.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Parsing sito del dipartimento con realitvo bottone
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/"));
