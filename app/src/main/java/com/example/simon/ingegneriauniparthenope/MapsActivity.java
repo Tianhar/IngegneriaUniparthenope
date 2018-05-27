@@ -39,12 +39,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final long MIN_TIME_BW_UPDATES = 1000 * 1 * 1; // 1 second
     private LocationManager locationManager;
     /**
-     * Variabile per vedere i servizi gps
+     * Variabili booleane per testare disponibilità gps e rete
      */
     private boolean isGPSEnabled;
-    /**
-     * Variabile per vedere i servizi internet
-     */
     private boolean isNetworkEnabled;
     /**
      *
@@ -55,7 +52,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     /**
-     * Quando apro la mappa controllo stato della connessione, GPS e localizzo la mia posizione
+     * All'apertura della mappa, chiedo l'accesso al servizio gps per la localizzazione della posizione corrente
      */
 
 
@@ -148,7 +145,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 ///////////////////////////
 
     /**
-     * Metodo per il posizionamento dei segnalini di partenza e arrivo
+     * Metodo per il posizionamento dei markers di partenza e di arrivo
      *
      * @param googleMap
      */
