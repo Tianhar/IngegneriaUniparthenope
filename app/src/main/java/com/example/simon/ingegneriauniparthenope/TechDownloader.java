@@ -16,14 +16,36 @@ import java.util.ArrayList;
 
 public class TechDownloader extends AsyncTask<Void, Void, Void> {
     /**
-     * Dichiarazione Array per personale docenti
+     * Dichiarazione ArrayList per nome del personale
      */
     static public ArrayList<String> nome = new ArrayList<String>();
+    /**
+     * Dichiarazione ArrayList per telefono del personale
+     */
     static public ArrayList<String> telefono = new ArrayList<String>();
+    /**
+     * Dichiarazione ArrayList per studio del personale
+     */
     static public ArrayList<String> studio = new ArrayList<String>();
+    /**
+     * Dichiarazione ArrayList per email del personale
+     */
     static public ArrayList<String> email = new ArrayList<String>();
+    /**
+     * Variabile  per eventuale errore download
+     */
     public static boolean erroreDownload = false;
+    /**
+     * Variabile per lo stato del download
+     */
     public static int downloadStatus = 0;
+
+    /**
+     * Metodo doInBackground che effettua il parsing con la pagina del personale e scarica i vari elementi della tabella table
+     *
+     * @param voids
+     * @return
+     */
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -57,6 +79,12 @@ public class TechDownloader extends AsyncTask<Void, Void, Void> {
         downloadStatus = 1;
         return null;
     }
+
+    /**
+     * Metodo che verifica stato del download e presenza di eventuale errore settando downloadStatus
+     * @param voids
+     *
+     */
 
     @Override
     protected void onPostExecute(Void voids) {

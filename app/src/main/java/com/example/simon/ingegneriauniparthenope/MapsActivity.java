@@ -21,23 +21,43 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
+/**
+ * Classe Mapsactivity
+ */
+
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
     private GoogleMap mMap;
 
-    // la minima distanza di aggiornamenti in metri
+    /**
+     * Distanza minima per aggiornmento in metri (10)
+     */
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10; // 10 meters
-    // tempo minimo tra aggiornamenti in millisecondi
+    /**
+     * Tempo minimo tra aggiornamento in millesecondi (1000)
+     */
     private static final long MIN_TIME_BW_UPDATES = 1000 * 1 * 1; // 1 second
     private LocationManager locationManager;
+    /**
+     * Variabile per vedere i servizi gps
+     */
     private boolean isGPSEnabled;
+    /**
+     * Variabile per vedere i servizi internet
+     */
     private boolean isNetworkEnabled;
+    /**
+     *
+     */
     private ImageButton btnmyposition;
 
     private LatLng position = null;
 
     @Override
-    //Quando ricevo la mappa controllo lo stato della rete e del gps e localizzo la mia posizione
+    /**
+     * Quando apro la mappa controllo stato della connessione, GPS e localizzo la mia posizione
+     */
+
 
     protected void onCreate(Bundle savedInstanceState) {
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -61,6 +81,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
+    /**
+     * Metodo per la gestione del punto di partenza nei casi in cui la posizione è abilitata;non è abilitata o non viene individuata
+     *
+     * @return
+     */
 
     public LatLng getLocation() {
         Location location;
@@ -122,6 +147,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 ///////////////////////////
 
+    /**
+     * Metodo per il posizionamento dei segnalini di partenza e arrivo
+     *
+     * @param googleMap
+     */
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -147,6 +178,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, displaySize.x, 250, 30));
     }
 
+    /**
+     * Metodo per verifica variazione location
+     * @param location
+     */
+
     @Override
     public void onLocationChanged(Location location) {
         if (location != null) {
@@ -154,15 +190,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    /**
+     * Metodo per verifica variazione stato
+     * @param s
+     * @param i
+     * @param bundle
+     */
+
     @Override
     public void onStatusChanged(String s, int i, Bundle bundle) {
 
     }
 
+    /**
+     *
+     * @param s
+     */
+
     @Override
     public void onProviderEnabled(String s) {
 
     }
+
+    /**
+     *
+     * @param s
+     */
 
     @Override
     public void onProviderDisabled(String s) {

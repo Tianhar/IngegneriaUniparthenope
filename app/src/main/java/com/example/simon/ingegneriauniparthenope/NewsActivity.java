@@ -17,9 +17,18 @@ import android.widget.Toast;
 
 import static com.example.simon.ingegneriauniparthenope.MainActivity.newsd;
 
-
+/**
+ * Classe News Activity per la sua gestione
+ */
 public class NewsActivity extends AppCompatActivity {
     int newsIndex = 0;
+
+    /**
+     * Metodo onCreate per menù
+     *
+     * @param menu
+     * @return
+     */
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -27,6 +36,14 @@ public class NewsActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu2, menu);
         return true;
     }
+
+    /**
+     * Metodo onCreate per activity_news
+     * Riferimenti TextView
+     * Ascoltatori di swipe
+     *
+     * @param SavedInstanceState
+     */
 
     protected void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
@@ -68,6 +85,7 @@ public class NewsActivity extends AppCompatActivity {
 
         });
 
+
         result.setOnTouchListener(new OnSwipeTouchListener(NewsActivity.this) {
             public void onSwipeRight() {
                 if (newsIndex == 0) {
@@ -92,6 +110,9 @@ public class NewsActivity extends AppCompatActivity {
         });
 
         layout.setOnTouchListener(new OnSwipeTouchListener(NewsActivity.this) {
+            /**
+             * Metodo per scorrere oltre la news più recente
+             */
             public void onSwipeRight() {
                 if (newsIndex == 0) {
                     Toast.makeText(getApplicationContext(), R.string.noPNews, Toast.LENGTH_SHORT).show();
@@ -101,6 +122,10 @@ public class NewsActivity extends AppCompatActivity {
                 }
 
             }
+
+            /**
+             * Metodo per scorrere oltre la news meno recente
+             */
 
             public void onSwipeLeft() {
                 if (newsIndex == (newsd.newsData.size() - 1)) {
@@ -112,12 +137,23 @@ public class NewsActivity extends AppCompatActivity {
             }
         });
 
+
         ArrayAdapter<String> spin_adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, newsd.newsData);
         spin_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDate.setAdapter(spin_adapter);
         spinnerDate.setSelection(newsIndex);
         spinnerDate.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Metodo per l'estrazione di corpo e titolo news dai rispettivi ArrayList
+             * L'indice di posizione è lo stesso della data selezionata da spinner
+             * Inserimento di titolo e corpo nella textview
+             *
+             * @param adapterView
+             * @param view
+             * @param position
+             * @param id
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 title.setText(newsd.newsTitolo.get(position).toString());
@@ -126,6 +162,11 @@ public class NewsActivity extends AppCompatActivity {
 
             }
 
+            /**
+             * Non viene selezionato nulla
+             * @param adapter
+             */
+
             @Override
             public void onNothingSelected(AdapterView<?> adapter) {
             }
@@ -133,12 +174,19 @@ public class NewsActivity extends AppCompatActivity {
 
 
         if (newsd.newsData.isEmpty() == false) {
+
             Toast.makeText(getApplicationContext(), R.string.newsIndication, Toast.LENGTH_SHORT).show();
 
         }
 
 
     }
+
+    /**
+     * Riporta alla pagine ufficiale delle news quando questa è selezionata dal menù
+     * @param item
+     * @return
+     */
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

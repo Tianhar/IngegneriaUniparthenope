@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Activity Lessons
+ * Classe LessonsActivity
  */
 public class LessonsActivity extends AppCompatActivity {
     /**
-     * metodo per creare e inizializzare ActivityLessons
+     * Metodo che inizializza activity_Lessons
+     * Riferimenti ai singoli bottoni
+     * Parsing orari pagina ufficiale con relaitvi bottoni
      *
      * @param savedInstanceState
      */
@@ -76,9 +78,7 @@ public class LessonsActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                /**
-                 * Parsing pagina orario con realtivo bottone
-                 */
+
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/orario/gestionale_LM.pdf"));
                 startActivity(browserIntent);
             }

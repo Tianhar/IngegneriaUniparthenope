@@ -11,12 +11,13 @@ import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookInten
 
 
 /**
- * The type Link activity.
+ * Classe LinkActivity.
  */
 
 public class LinkActivity extends AppCompatActivity {
     /**
-     * metodo OnCreate che istanzia ActivityLink
+     * metodo OnCreate per activity_link
+     * Parsing pagine utility attraverso relativi bottoni
      *
      * @param savedInstanceState
      */
@@ -87,7 +88,7 @@ public class LinkActivity extends AppCompatActivity {
 
         bottone_dip.setOnClickListener(new View.OnClickListener() {
             /**
-             * Parsing sito del dipartimento con realitvo bottone
+             * Parsing sito del dipartimento (Browser) con realitvo bottone
              * @param v
              */
             @Override

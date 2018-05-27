@@ -16,7 +16,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
- * The type Utility.
+ * Classe Utility.
  */
 public class Utility {
     /**

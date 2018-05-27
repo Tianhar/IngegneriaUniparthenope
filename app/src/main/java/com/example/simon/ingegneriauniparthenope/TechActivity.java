@@ -10,8 +10,19 @@ import android.widget.TextView;
 
 import static com.example.simon.ingegneriauniparthenope.MainActivity.techd;
 
+/**
+ * Classe TechActivity
+ */
+
 public class TechActivity extends AppCompatActivity {
 
+    /**
+     * Metodo onCreate che istanzia l'activity tech
+     * Riferimenti a TextView del personale (nome, studio, email, telefono)
+     * Inserimento in uno Spinner
+     *
+     * @param SavedInstanceState
+     */
 
     protected void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
@@ -33,6 +44,13 @@ public class TechActivity extends AppCompatActivity {
         spinnerDoc.setAdapter(spin_adapter);
         spinnerDoc.setSelection(0);
         spinnerDoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Metodo invocato quando viene selezionato un ogetto dallo spinner
+             * @param adapterView
+             * @param view
+             * @param position
+             * @param id
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 nomePersonale.setText(techd.nome.get(position).toString());
@@ -40,6 +58,11 @@ public class TechActivity extends AppCompatActivity {
                 telefonoPersonale.setText(techd.telefono.get(position).toString());
                 emailPersonale.setText(techd.email.get(position).toString());
             }
+
+            /**
+             * Metodo quando non viene selezionato un ogetto dallo spinner
+             * @param adapter
+             */
 
             @Override
             public void onNothingSelected(AdapterView<?> adapter) {

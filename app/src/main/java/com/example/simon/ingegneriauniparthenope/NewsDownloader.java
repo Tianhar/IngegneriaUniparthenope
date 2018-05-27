@@ -12,17 +12,38 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 
+/**
+ * Classe NewsDownloader per il download delle news
+ */
 
 public class NewsDownloader extends AsyncTask<Void, Void, Void> {
     /**
-     * Dichiarazione ArrayList di Data, Titolo e corpo
+     * Dichiarazione ArrayList per la data
      */
     public static ArrayList<String> newsData = new ArrayList<String>();
+    /**
+     * Dichiarazione ArrayList per il titolo
+     */
     public static ArrayList<String> newsTitolo = new ArrayList<String>();
+    /**
+     * Dichirazione ArrayLiist per corpo
+     */
     public static ArrayList<String> newsCorpo = new ArrayList<String>();
+    /**
+     * Variabile per eventuale errore download
+     */
     public static boolean erroreDownload = false;
+    /**
+     * Variabile per lo stato del download
+     */
     public static int downloadStatus = 0;
 
+    /**
+     * Metodo doInBackground che effettua il parsing con la pagina delle nwws e scarica i vari elementi delle news
+     *
+     * @param voids
+     * @return
+     */
 
 
     @Override
@@ -35,6 +56,7 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
             String title = doc.title();
             Element content = doc.getElementById("content");
             Elements newsc = content.getElementsByClass("news");
+
 
             for (Element link : newsc) {
                 StringBuilder builder = new StringBuilder();
@@ -82,7 +104,7 @@ public class NewsDownloader extends AsyncTask<Void, Void, Void> {
     }
 
     /**
-     * Metodo che setta lo stato del download per eventuali errori
+     * Metodo che verifica stato del download e presenza di eventuale errore settando downloadStatus
      */
 
     @Override

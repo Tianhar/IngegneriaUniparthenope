@@ -7,7 +7,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
+/**
+ * Classe OnSwipeTouchListener per la gestione dei Swipe delle news
+ */
+
 public class OnSwipeTouchListener implements OnTouchListener {
+    /**
+     * Variabile final Detector del movimento
+     */
 
     private final GestureDetector gestureDetector;
 
@@ -20,14 +27,30 @@ public class OnSwipeTouchListener implements OnTouchListener {
         return gestureDetector.onTouchEvent(event);
     }
 
+    /**
+     * Swipe verso destra
+     */
+
     public void onSwipeRight() {
     }
+
+    /**
+     * Swipe verso sinistra
+     */
 
     public void onSwipeLeft() {
     }
 
+    /**
+     * Swipe sù
+     */
+
     public void onSwipeTop() {
     }
+
+    /**
+     * Swipe giù
+     */
 
     public void onSwipeBottom() {
     }

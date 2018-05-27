@@ -12,15 +12,42 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 
-//Effettua il download del personale docenti
+/**
+ * Classe ProfDownloader che effettua il download del personale docente
+ */
 
 public class ProfDownloader extends AsyncTask<Void, Void, Void> {
+    /**
+     * Dichiarazione ArrayList per nome dei professori
+     */
     static public ArrayList<String> nome = new ArrayList<String>();
+    /**
+     * Dichiarazione ArrayList per telefono dei professori
+     */
     static public ArrayList<String> telefono = new ArrayList<String>();
+    /**
+     * Dichiarazione ArrayList per studio dei professori
+     */
     static public ArrayList<String> studio = new ArrayList<String>();
+    /**
+     * Dichiarazione ArrayList per emaildei professori
+     */
     static public ArrayList<String> email = new ArrayList<String>();
+    /**
+     * Variabile per eventuale errore download
+     */
     public static boolean erroreDownload = false;
+    /**
+     * Variabile per lo stato del download
+     */
     public static int downloadStatus = 0;
+
+    /**
+     * Metodo doInBackground che effettua il parsing con la pagina dei professori e scarica i vari elementi della tabella table
+     *
+     * @param voids
+     * @return
+     */
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -55,6 +82,10 @@ public class ProfDownloader extends AsyncTask<Void, Void, Void> {
         return null;
     }
 
+    /**
+     * Metodo che verifica stato del download e presenza di eventuale errore settando downloadStatus
+     * @param voids
+     */
     @Override
     protected void onPostExecute(Void voids) {
         if ((downloadStatus == 1) && (erroreDownload == true)) {

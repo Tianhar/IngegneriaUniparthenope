@@ -7,7 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Classe ModulisticaActivity
+ */
+
 public class ModulisticaActivity extends AppCompatActivity {
+    /**
+     * Metodo onCreate per activity_modulistica
+     *
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +35,9 @@ public class ModulisticaActivity extends AppCompatActivity {
         Button bottoneMod7 = (Button) findViewById(R.id.buttonModulo7);
 
 
-
         bottoneMod1.setOnClickListener(new View.OnClickListener() {
             /**
-             * Parsing con modulistica del relativo bottone
+             * Metodo per il parsing con la pagina della modulistica attraverso il relativo bottone
              *
              * @param v
              */
@@ -42,7 +50,7 @@ public class ModulisticaActivity extends AppCompatActivity {
 
         bottoneMod2.setOnClickListener(new View.OnClickListener() {
             /**
-             * Parsing con modulistica del relativo bottone
+             * Metodo per il parsing con la pagina della modulistica attraverso il relativo bottone
              * @param v
              */
             @Override
@@ -54,7 +62,7 @@ public class ModulisticaActivity extends AppCompatActivity {
 
         bottoneMod3.setOnClickListener(new View.OnClickListener() {
             /**
-             * Parsing con modulistica del relativo bottone
+             * Metodo per il parsing con la pagina della modulistica attraverso il relativo bottone
              * @param v
              */
             @Override
@@ -66,7 +74,7 @@ public class ModulisticaActivity extends AppCompatActivity {
 
         bottoneMod4.setOnClickListener(new View.OnClickListener() {
             /**
-             * Parsing con modulistica del relativo bottone
+             * Metodo per il parsing con la pagina della modulistica attraverso il relativo bottone
              * @param v
              */
             @Override
@@ -78,7 +86,7 @@ public class ModulisticaActivity extends AppCompatActivity {
 
         bottoneMod5.setOnClickListener(new View.OnClickListener() {
             /**
-             * Parsing con modulistica del relativo bottone
+             * Metodo per il parsing con la pagina della modulistica attraverso il relativo bottone
              * @param v
              */
             @Override
@@ -90,7 +98,7 @@ public class ModulisticaActivity extends AppCompatActivity {
 
         bottoneMod6.setOnClickListener(new View.OnClickListener() {
             /**
-             * Parsing con modulistica del relativo bottone
+             * Metodo per il parsing con la pagina della modulistica attraverso il relativo bottone
              * @param v
              */
             @Override
@@ -102,7 +110,7 @@ public class ModulisticaActivity extends AppCompatActivity {
 
         bottoneMod7.setOnClickListener(new View.OnClickListener() {
             /**
-             * Parsing con modulistica del relativo bottone
+             * Metodo per il parsing con la pagina della modulistica attraverso il relativo bottone
              * @param v
              */
             @Override

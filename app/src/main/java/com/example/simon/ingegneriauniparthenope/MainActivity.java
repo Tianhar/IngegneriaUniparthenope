@@ -41,10 +41,26 @@ public class MainActivity extends AppCompatActivity {
      * Avvia il task che scarica il personale
      */
     public static TechDownloader techd = (TechDownloader) new TechDownloader().execute();
+    /**
+     *
+     */
 
     public static Boolean insavingn = true;
+    /**
+     *
+     */
     public static Boolean insavingt = true;
+    /**
+     *
+     */
     public static Boolean insavingp = true;
+
+    /**
+     * Metodo che inizializza il menù
+     *
+     * @param menu
+     * @return
+     */
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -54,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Metodo che crea e inizializza l'activity principale
+     * Metodo che crea e inizializza activity_main
      *
      * @param savedInstanceState
      */
@@ -209,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottoneNews.setOnClickListener(new View.OnClickListener() {
             /**
-             * Metodo che fa partire NewsActivity con relativo bottone.
+             * Metodo che fa partire NewsActivity al relativo bottone.
              * @param v
              */
 
@@ -309,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottoneMod.setOnClickListener(new View.OnClickListener() {
             /**
-             * Metodo che fa partire ModulisticaActivity con relativo bottone.
+             * Metodo che fa partire ModulisticaActivity al relativo bottone.
              *
              */
             @Override
@@ -368,7 +384,9 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    /** Metodo verifica conessione e riesegue task download di prof news e tech*/
+    /**
+     * Metodo verifica conessione e nel caso riesegue task download di prof news e tech
+     * */
     @Override
     protected void onResume() {
         super.onResume();

@@ -10,7 +10,17 @@ import android.widget.TextView;
 
 import static com.example.simon.ingegneriauniparthenope.MainActivity.profd;
 
+/**
+ * Classe ProfActivity per la sua gestione
+ */
 public class ProfActivity extends AppCompatActivity {
+    /**
+     * Metodo onCreate che istanzia l'activity tech
+     * Riferimenti a TextView dei docenti (nome, studio, email, telefono)
+     * Inserimento in uno Spinner
+     *
+     * @param SavedInstanceState
+     */
 
 
     protected void onCreate(Bundle SavedInstanceState) {
@@ -33,6 +43,13 @@ public class ProfActivity extends AppCompatActivity {
         spinnerDoc.setAdapter(spin_adapter);
         spinnerDoc.setSelection(0);
         spinnerDoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            /**
+             * Metodo invocato quando viene selezionato un ogetto dallo spinner
+             * @param adapterView
+             * @param view
+             * @param position
+             * @param id
+             */
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 nomeDocente.setText(profd.nome.get(position).toString());
@@ -40,6 +57,11 @@ public class ProfActivity extends AppCompatActivity {
                 telefonoDocente.setText(profd.telefono.get(position).toString());
                 emailDocente.setText(profd.email.get(position).toString());
             }
+
+            /**
+             * Metodo quando non viene selezionato un ogetto dallo spinner
+             * @param adapter
+             */
 
             @Override
             public void onNothingSelected(AdapterView<?> adapter) {
