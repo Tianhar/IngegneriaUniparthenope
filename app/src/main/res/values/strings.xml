@@ -47,7 +47,7 @@
     <string name="ITEM_6">Reload</string>
     <string name="downloadingStatus">Downloading</string>
     <string name="mypos">My position</string>
-    <string name="noposition">Current position not found. Path from Napoli Centrale Station</string>
+    <string name="noposition">Current position not found. Path from Garibaldi Square Station</string>
     <string name="yesposition">Path from your current position</string>
     <string name="newsfile_data" translatable="false">newsdata</string>
     <string name="newsfile_titolo" translatable="false">newstitolo</string>
