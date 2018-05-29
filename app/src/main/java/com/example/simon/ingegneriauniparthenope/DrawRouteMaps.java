@@ -5,6 +5,9 @@ import android.content.Context;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 
+/**
+ * Classe DrawRouteMaps
+ */
 
 public class DrawRouteMaps {
 

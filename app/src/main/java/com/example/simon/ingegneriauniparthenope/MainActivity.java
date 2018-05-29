@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             ); //Manifest.permission.ACCESS_COARSE_LOCATION,
         }
 
+
         if (checkConnectivity(this) == 0) {
             Toast.makeText(getApplicationContext(), R.string.nointernet, Toast.LENGTH_LONG).show();
             if ((newsd.newsData.size() == 0) && (profd.nome.size() == 0) && (techd.nome.size() == 0) && (newsd.downloadStatus != 0) && (profd.downloadStatus != 0) && (techd.downloadStatus != 0)) {

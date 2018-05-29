@@ -44,7 +44,7 @@ public class Utility {
     }
 
     /**
-     * Check connectivity int.
+     * Verifica connessione
      *
      * @param context the context
      * @return the int
@@ -65,6 +65,14 @@ public class Utility {
         return internet;
     }
 
+    /**
+     * Metodo save e get ArrayList
+     *
+     * @param context
+     * @param arrayList
+     * @param nomefile
+     */
+
     public static void saveArrayList(Context context, ArrayList<String> arrayList, String nomefile) {
         try {
             FileOutputStream fileOutputStream = context.openFileOutput(nomefile, Context.MODE_PRIVATE);
@@ -78,6 +86,12 @@ public class Utility {
         }
     }
 
+    /**
+     *
+     * @param context
+     * @param nomefile
+     * @return
+     */
     public static ArrayList<String> getSavedArrayList(Context context, String nomefile) {
         ArrayList<String> savedArrayList = null;
 

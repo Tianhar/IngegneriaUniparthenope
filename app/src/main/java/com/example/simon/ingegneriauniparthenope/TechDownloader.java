@@ -12,7 +12,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 
-
+/**
+ * Classe TechDownloader
+ */
 
 public class TechDownloader extends AsyncTask<Void, Void, Void> {
     /**

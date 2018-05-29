@@ -10,11 +10,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Classe DataRouteParser
+ */
 
 public class DataRouteParser {
 
     /**
-     * Receives a JSONObject and returns a list of lists containing latitude and longitude
+     * Riceve un oggetto JSON e ritorna una lista contente latitudine e longitudine
+     *
      */
     public List<List<HashMap<String, String>>> parse(JSONObject jObject) {
 

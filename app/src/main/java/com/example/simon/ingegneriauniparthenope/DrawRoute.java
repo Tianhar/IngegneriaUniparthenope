@@ -12,6 +12,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Classe DrawRoute
+ */
 
 public class DrawRoute extends AsyncTask<String, Void, String> {
 
@@ -41,7 +44,8 @@ public class DrawRoute extends AsyncTask<String, Void, String> {
     }
 
     /**
-     * A method to download json data from url
+     * Un metodo per scaricare dati JSON da url
+     *
      */
     private String getJsonRoutePoint(String strUrl) throws IOException {
         String data = "";
@@ -50,13 +54,13 @@ public class DrawRoute extends AsyncTask<String, Void, String> {
         try {
             URL url = new URL(strUrl);
 
-            // Creating an http connection to communicate with url
+            // Creazione di una connessione http per comunicare con url
             urlConnection = (HttpURLConnection) url.openConnection();
 
-            // Connecting to url
+            // Connessione a url
             urlConnection.connect();
 
-            // Reading data from url
+            // Lettura dati da url
             iStream = urlConnection.getInputStream();
 
             BufferedReader br = new BufferedReader(new InputStreamReader(iStream));
