@@ -38,9 +38,9 @@ public class NewsActivity extends AppCompatActivity {
     }
 
     /**
-     * Metodo onCreate per activity_news
-     * Riferimenti TextView
-     * Ascoltatori di swipe
+     * Metodo onCreate per activity_news,
+     * Riferimenti TextView,
+     * Ascoltatori di swipe,
      *
      * @param SavedInstanceState
      */
@@ -145,8 +145,8 @@ public class NewsActivity extends AppCompatActivity {
         spinnerDate.setSelection(newsIndex);
         spinnerDate.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             /**
-             * Metodo per l'estrazione di corpo e titolo news dai rispettivi ArrayList
-             * L'indice di posizione è lo stesso della data selezionata da spinner
+             * Metodo per l'estrazione di corpo e titolo news dai rispettivi ArrayList,
+             * L'indice di posizione è lo stesso della data selezionata da spinner,
              * Inserimento di titolo e corpo nella textview
              *
              * @param adapterView

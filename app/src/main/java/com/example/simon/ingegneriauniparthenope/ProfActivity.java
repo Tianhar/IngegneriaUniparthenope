@@ -15,11 +15,13 @@ import static com.example.simon.ingegneriauniparthenope.MainActivity.profd;
  */
 public class ProfActivity extends AppCompatActivity {
     /**
-     * Metodo onCreate che istanzia l'activity tech
-     * Riferimenti a TextView dei docenti (nome, studio, email, telefono)
+     *
+     * Metodo onCreate che istanzia l'activity tech,
+     * Riferimenti a TextView dei docenti (nome, studio, email, telefono),
      * Inserimento in uno Spinner
      *
      * @param SavedInstanceState
+     *
      */
 
 
