@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
      * Avvia il task che scarica le news
      */
     public static NewsDownloader newsd = (NewsDownloader) new NewsDownloader().execute();
-    public static ProfDownloader profd = (ProfDownloader) new ProfDownloader().execute();
     /**
      * Avvia il task che scarica il personale
      */
+    public static ProfDownloader profd = (ProfDownloader) new ProfDownloader().execute();
     public static TechDownloader techd = (TechDownloader) new TechDownloader().execute();
     /**
      *
