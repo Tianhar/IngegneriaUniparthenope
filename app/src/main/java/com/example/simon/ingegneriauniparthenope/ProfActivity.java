@@ -11,8 +11,13 @@ import android.widget.TextView;
 import static com.example.simon.ingegneriauniparthenope.MainActivity.profd;
 
 /**
- * Classe ProfActivity per la sua gestione
+ * Classe TechActivity.
+ * <p>Classe che si occupa delle gestione dei professori e inizializza la sua activity</p>
+ * <p> Metodo onCreate che istanzia l'activity prof<p>
+ * <p>Riferimenti a TextView dei docenti(nome, studio, email, telefono)<p>
+ * <p>inserimento in uno Spinner</p>
  */
+
 public class ProfActivity extends AppCompatActivity {
     /**
      *

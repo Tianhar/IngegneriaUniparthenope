@@ -18,13 +18,19 @@ import android.widget.Toast;
 import static com.example.simon.ingegneriauniparthenope.MainActivity.newsd;
 
 /**
- * Classe News Activity per la sua gestione
+ * Classe News Activity per la sua gestione.
+ * <p>Metodo onCreate per activity_news<p>
+ * <p>Inserimento delle date in uno spinner</p>
+ * <p>Ascoltatori di swipe (destra sinistra)</p>
+ * <p>Caso di scorrimento oltre la news più recente o meno recente</p>
+ *
+ *
  */
 public class NewsActivity extends AppCompatActivity {
     int newsIndex = 0;
 
     /**
-     * Metodo onCreate per menù
+     * Metodo che crea un menù nella stessa activity
      *
      * @param menu
      * @return
@@ -183,7 +189,8 @@ public class NewsActivity extends AppCompatActivity {
     }
 
     /**
-     * Riporta alla pagine ufficiale delle news quando questa è selezionata dal menù
+     *
+     * <p>Riporta alla pagine ufficiale delle news quando questa è selezionata dal menù.<p>
      * @param item
      * @return
      */

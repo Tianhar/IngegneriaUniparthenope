@@ -13,7 +13,12 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Classe TechDownloader
+ * Classe TechDownloader.
+ * <p>Classe che effettua il dowlonad del personale docente.</p>
+ * <p>Metodo doInBackground che effettua il parsing con la pagina
+ * del personale (Html) e scarica i vari elementi della tabella table </p>
+ *
+ * <p>I vari elementi scaricati vengo caricati sui rispettivi ArrayList</p>
  */
 
 public class TechDownloader extends AsyncTask<Void, Void, Void> {

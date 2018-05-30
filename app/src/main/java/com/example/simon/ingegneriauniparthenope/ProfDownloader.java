@@ -13,7 +13,11 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Classe ProfDownloader che effettua il download del personale docente
+ * Classe ProfDownloader che effettua il download del personale docente.
+ * <p>Metodo doInBackground che effettua il parsing con la pagina dei professori (Html) e scarica i vari elementi
+ * della tabella table</p>
+ *
+ * <p>I vari elementi scaricati vengo caricati sui rispettivi ArrayList</p>
  */
 
 public class ProfDownloader extends AsyncTask<Void, Void, Void> {

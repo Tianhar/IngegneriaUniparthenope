@@ -22,7 +22,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
 /**
- * Classe Mapsactivity
+ * Classe Mapsactivity,
+ * <p>Classe per la gestione delle mappe</p>
+ * <p>Dichiarazione di parametri di aggiornemtno della posizione (distanza minima e intervallo di tempo).</p>
+ * <p>All'apertura delle mappe viene richiesto l'accesso ai servizi gps.</p>
  */
 
 

@@ -17,6 +17,8 @@ import java.util.ArrayList;
 
 /**
  * Classe Utility.
+ * <p>Classe di supporto contente metodo per Intent con facebook e verifica della connessione</p>
+ * <p>Metodi save e get di un ArrayList</p>
  */
 public class Utility {
     /**

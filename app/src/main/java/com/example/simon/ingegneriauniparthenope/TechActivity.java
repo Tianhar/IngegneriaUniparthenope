@@ -11,7 +11,11 @@ import android.widget.TextView;
 import static com.example.simon.ingegneriauniparthenope.MainActivity.techd;
 
 /**
- * Classe TechActivity
+ * Classe TechActivity.
+ * <p>Classe che si occupa delle gestione del personale scaricato e inizializza la sua activity</p>
+ * <p> Metodo onCreate che istanzia l'activity tech<p>
+ * <p>Riferimenti a TextView del personale (nome, studio, email, telefono)<p>
+ * <p>inserimento in uno Spinner</p>
  */
 
 public class TechActivity extends AppCompatActivity {

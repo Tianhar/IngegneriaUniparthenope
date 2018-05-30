@@ -26,25 +26,30 @@ import static com.example.simon.ingegneriauniparthenope.Utility.saveArrayList;
 
 
 /**
- * Main activity
+ * Classe Main activity; classe principale che si occupa delle gestione di tutte
+ * le activity.
  *
- * @author Gruppo
+ * <p>Nel metodo onCreate viene iniziallizzata l'activity principale e vegono creati i riferimenti
+ *  ai bottoni di ogni singolo tasto presenti in activty_main, inoltre si effettua un controllo
+ *  sui permessi di rete e posizione.
+ *
+ *  <p>Succeseivamente vengono indicati i percorsi assoluti di tutti gli elementi relativi alle news, professori
+ *  e personale amministrativo; il fine è quello di salvare i contenuti nei rispettivi ArrayList per essere utilizzati
+ *  in mancanza di connessione.
+ *
+ * @version 1.0
+ * @author Gruppo (Marco Martino, Vittorio Colonna, Simone Ardiero, Giuliano Riccio)
+ * @since 30/04/2018
  */
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * Avvia il task che scarica le news
+    /**</p>
+     * Vengo avviati i vari task per scaricare le news,
+     * i professori e il personale <p>
      */
     public static NewsDownloader newsd = (NewsDownloader) new NewsDownloader().execute();
-    /**
-     * Avvia il task che scarica il personale
-     */
     public static ProfDownloader profd = (ProfDownloader) new ProfDownloader().execute();
     public static TechDownloader techd = (TechDownloader) new TechDownloader().execute();
-    /**
-     *
-     */
-
     public static Boolean insavingn = true;
     /**
      *
@@ -56,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
     public static Boolean insavingp = true;
 
     /**
-     * Metodo che inizializza il menù
      *
-     * @param menu
-     * @return
-     */
+     * Metodo Che crea un menù a scelta nell'activity main.
+     *
+     *
+     * */
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -339,7 +344,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * inizializza e gestisce menù a tendina
+     * Metodo per la gestione di un menù.
+     *
+     *  <p> Menù a 4 bottoni:
+     *  <p>1° fa partire MapsActivity evidenziando un segnalino sulla posizione dell'università.
+     *  <p>2° tramite intent fa partire facebook con la pagina dell'università.
+     *  <p>3° è un dialog con le info.
+     *  <p>4° esce dall'applicazione.
+     *
      *
      */
     @Override
@@ -386,7 +398,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Metodo verifica conessione e nel caso riesegue task download di prof news e tech
+     * Metodo che verifica lo stato della conessione e lo stato di downloadStatus
+     *
+     * <p>Se vi è connessione (1) e downloadStatus è nello stato 2 o 3 , pulisce titolo,
+     * corpo e data e riesegue task per il download delle news
+     *
+     * <p>Analoga cosa accade per i task che scaricano i professori e
+     * il personale
+     *
      * */
     @Override
     protected void onResume() {

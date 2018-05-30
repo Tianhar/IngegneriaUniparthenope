@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Classe ModulisticaActivity
+ * Classe ModulisticaActivity,
+ * <p>Classe che si occupa di inizializzare activity modulistica.</p>
+ * <p>Vengono creati i riferimenti a tutti i pulsanti.</p>
+ * <p>Viene effettuato il parsing con tutte le pagine della modulsitica</p>
  */
 
 public class ModulisticaActivity extends AppCompatActivity {

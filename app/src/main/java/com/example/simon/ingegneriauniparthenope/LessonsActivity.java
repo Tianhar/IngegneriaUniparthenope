@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Classe LessonsActivity
+ * Classe LessonsActivity.
+ * <p>Metodo onCreate che inizializza Lessons activity<p>
+ * <p>Riferimento ai bottoni per i link</p>
+ * <p>Parsing con i vari link passando per i bottoni</p>
  */
 public class LessonsActivity extends AppCompatActivity {
     /**

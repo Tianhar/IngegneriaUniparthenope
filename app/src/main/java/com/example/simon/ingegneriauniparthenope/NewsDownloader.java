@@ -13,7 +13,11 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Classe NewsDownloader per il download delle news
+ * Classe NewsDownloader per il download delle news.
+ * <p>Metodo doInBackground che effettua il parsing con la pagina delle nwws e scarica i vari elementi delle news.</p>
+ *
+ * <p>I vari elementi scaricati vengo caricati sui rispettivi ArrayList</p>
+ *
  */
 
 public class NewsDownloader extends AsyncTask<Void, Void, Void> {

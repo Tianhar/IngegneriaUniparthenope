@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Classe TechDownloader
+ * Classe RouteDrwaerTask
  */
 
 public class RouteDrawerTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {

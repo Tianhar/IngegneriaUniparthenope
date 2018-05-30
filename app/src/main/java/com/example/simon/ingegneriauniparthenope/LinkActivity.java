@@ -12,6 +12,9 @@ import static com.example.simon.ingegneriauniparthenope.Utility.newFacebookInten
 
 /**
  * Classe LinkActivity.
+ * <p>Metodo onCreate che inizializza activity Link<p>
+ * <p>Riferimento ai bottoni per i link</p>
+ * <p>Parsing con i vari link passando per i bottoni</p>
  */
 
 public class LinkActivity extends AppCompatActivity {
