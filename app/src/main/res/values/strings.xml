@@ -40,7 +40,7 @@
     <string name="exemption_handicap">Request exemption for disabled people</string>
     <string name="rinuncia_studi">give up studies</string>
     <string name="domanda_decadenza">Application for revocation</string>
-    <string name="richiesta_certificati">Richiesta certificati</string>
+    <string name="richiesta_certificati">"Certificates request "</string>
     <string name="domanda_laurea">Graduation exam application</string>
     <string name="esami_scelta">exam request form chosen</string>
     <string name="domand_laurea">graduation exam application and parchment request</string>

@@ -41,4 +41,6 @@
     <string name="yourposition">La tua posizione</string>
     <string name="garibaldi">Stazione Piazza Garibaldi</string>
     <string name="universityposition">Dipartimento di Ingegneria - Università Parthenope</string>
+    <string name="richiesta_certificati">Richiesta certificati</string>
+    <string name="cant">Nessuna connessione e nessun file trovato</string>
 </resources>
