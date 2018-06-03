@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         Button bottoneUtiliy = (Button) findViewById(R.id.buttonFour);
         Button bottoneTech = (Button) findViewById(R.id.buttonFive);
         Button bottoneMod = (Button) findViewById(R.id.buttonSix);
+
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             //&& ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
             // TODO: Consider calling
@@ -224,6 +225,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.cartastudenti.org/?m=1"));
+                startActivity(browserIntent);
+            }
+        });
+
+
+        ImageButton bottoneDip = (ImageButton) findViewById(R.id.dipartimento);
+
+
+        bottoneDip.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Metodo per parsing sito cartastudenti al relativo bottone
+             *
+             * @param v
+             */
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ingegneria.uniparthenope.it/"));
                 startActivity(browserIntent);
             }
         });

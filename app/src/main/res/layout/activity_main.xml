@@ -4,76 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/logo_g" />
 
     <LinearLayout
         android:id="@+id/linear1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="331dp"
+        android:layout_height="129dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         android:paddingTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonStudenti"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/imageButton5">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingRight="10dp">
+            android:paddingEnd="10dp">
 
             <Button
                 android:id="@+id/buttonOne"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@android:color/holo_orange_dark"
+                android:baselineAligned="false"
                 android:text="@string/news"
-                android:textColor="@android:color/background_light" />
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                tools:textColor="@android:color/background_light" />
 
             <Button
                 android:id="@+id/buttonThree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@android:color/holo_orange_dark"
                 android:text="@string/lessons_timetable"
-                android:textColor="?attr/colorBackgroundFloating" />
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@android:color/background_light" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingRight="10dp">
+            android:paddingEnd="10dp">
 
             <Button
                 android:id="@+id/buttonTwo"
-                android:layout_width="match_parent"
+                android:layout_width="117dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@android:color/holo_orange_dark"
                 android:text="@string/professors"
+                android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="@android:color/background_light" />
 
             <Button
                 android:id="@+id/buttonFour"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
+                android:layout_width="115dp"
+                android:layout_height="65dp"
+                android:backgroundTint="@android:color/holo_orange_dark"
                 android:text="@string/UTIL_3"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@android:color/background_light"
                 tools:layout_editor_absoluteX="147dp"
                 tools:layout_editor_absoluteY="290dp" />
         </LinearLayout>
@@ -87,16 +88,18 @@
                 android:id="@+id/buttonFive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@android:color/holo_orange_dark"
                 android:text="@string/staff"
+                android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="@android:color/background_light" />
 
             <Button
                 android:id="@+id/buttonSix"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@color/colorAccent"
                 android:text="@string/forms"
+                android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="@android:color/background_light" />
         </LinearLayout>
     </LinearLayout>
@@ -118,14 +121,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="261dp" />
+        app:layout_constraintGuide_end="288dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="254dp"
+        app:layout_constraintGuide_begin="390dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="@+id/guideline" />
 
@@ -134,14 +137,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="53dp" />
+        app:layout_constraintGuide_begin="-576dp" />
 
     <ImageButton
         android:id="@+id/buttonStudenti"
+        android:layout_width="317dp"
+        android:layout_height="60dp"
+
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/carta_studenti" />
+
+    <ImageButton
+        android:id="@+id/dipartimento"
+        android:layout_width="339dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dipartimento" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="272dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="29dp"
+        android:layout_marginTop="21dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/linear1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dipartimento"
+        app:srcCompat="@mipmap/logo_g" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:srcCompat="@mipmap/carta_studenti" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
 
 </android.support.constraint.ConstraintLayout>
