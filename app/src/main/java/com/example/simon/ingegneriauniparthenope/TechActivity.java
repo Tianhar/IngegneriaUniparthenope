@@ -32,8 +32,6 @@ public class TechActivity extends AppCompatActivity {
         super.onCreate(SavedInstanceState);
         setContentView(R.layout.activity_tech);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         final TextView nomePersonale = (TextView) findViewById(R.id.nomePersonale);
         final TextView studioPersonale = (TextView) findViewById(R.id.studioPersonale);

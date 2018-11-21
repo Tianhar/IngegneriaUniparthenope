@@ -27,7 +27,6 @@ public class LessonsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         Button bottoneCorso1 = (Button) findViewById(R.id.buttonCorso1); // riferimento bottone corso 1

@@ -9,8 +9,10 @@
     <string name="poffice">Studio</string>
     <string name="ptelephone">Telefono</string>
     <string name="ITEM_1">Dove siamo</string>
+    <string name="ITEM_2">Associazione Studentesca</string>
+    <string name="ITEM_7">Sviluppatori</string>
     <string name="ITEM_4">Esci</string>
-    <string name="UTIL_1">Gruppo Facebook</string>
+    <string name="UTIL_1">Fb Università</string>
     <string name="UTIL_2">Sito e-Learning</string>
     <string name="UTIL_3" translatable="false">Link Utili</string>
     <string name="infoapp">Questa applicazione è una guida per lo studente di ingegneria Uniparthenope. Ci sono news, orari e tutto ciò che riguarda il corso di ingegneria. Gli autori non sono responsabili di improvvisi cambiamenti di orari o di avvisi.</string>

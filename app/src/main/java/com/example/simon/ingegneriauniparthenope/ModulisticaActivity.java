@@ -26,7 +26,6 @@ public class ModulisticaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modulistica);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         Button bottoneMod1 = (Button) findViewById(R.id.buttonModulo1);

@@ -23,7 +23,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:text="@string/forms"
-        android:textColor="@color/colorPrimaryDark"
         android:textSize="36sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -38,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="474dp"
         android:orientation="vertical"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
             android:id="@+id/buttonModulo1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:scaleType="fitCenter"
@@ -58,61 +58,62 @@
             android:id="@+id/buttonModulo2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/exemption_handicap"
-            android:textColor="@android:color/background_light" />
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/buttonModulo3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="@string/rinuncia_studi"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
-            android:text="@string/rinuncia_studi"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/buttonModulo4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/domanda_decadenza"
-            android:textColor="@android:color/background_light" />
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/buttonModulo5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/richiesta_certificati"
-            android:textColor="@android:color/background_light" />
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/buttonModulo6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/domand_laurea"
-            android:textColor="@android:color/background_light" />
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/buttonModulo7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:text="@string/esami_scelta"
-            android:textColor="@android:color/background_light" />
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white" />
 
 
     </LinearLayout>

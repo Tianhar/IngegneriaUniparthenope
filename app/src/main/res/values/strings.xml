@@ -14,9 +14,10 @@
     <string name="ptelephone">Telephone</string>
     <string name="pemail">Email</string>
     <string name="ITEM_1">How to find us?</string>
-    <string name="ITEM_2" translatable="false">Social</string>
+    <string name="ITEM_2" translatable="false">Association</string>
     <string name="ITEM_3" translatable="false">Info</string>
     <string name="ITEM_4">Exit</string>
+    <string name="ITEM_7">Developers</string>
     <string name="title_activity_maps" translatable="false">Map</string>
     <string name="UTIL_1">Facebook Group</string>
     <string name="UTIL_2">Blended Learning</string>

@@ -34,7 +34,6 @@ public class ProfActivity extends AppCompatActivity {
         super.onCreate(SavedInstanceState);
         setContentView(R.layout.activity_prof);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         final TextView nomeDocente = (TextView) findViewById(R.id.nomeDocente);

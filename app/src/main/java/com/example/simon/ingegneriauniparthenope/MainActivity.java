@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,11 +30,11 @@ import static com.example.simon.ingegneriauniparthenope.Utility.saveArrayList;
  * Classe Main activity; classe principale che si occupa delle gestione di tutte
  * le activity.
  *
- * <p>Nel metodo onCreate viene iniziallizzata l'activity principale e vegono creati i riferimenti
+ * <p>Nel metodo onCreate viene inizializzata l'activity principale e vengono creati i riferimenti
  *  ai bottoni di ogni singolo tasto presenti in activty_main, inoltre si effettua un controllo
  *  sui permessi di rete e posizione.
  *
- *  <p>Succeseivamente vengono indicati i percorsi assoluti di tutti gli elementi relativi alle news, professori
+ *  <p>Successivamente vengono indicati i percorsi assoluti di tutti gli elementi relativi alle news, professori
  *  e personale amministrativo; il fine è quello di salvare i contenuti nei rispettivi ArrayList per essere utilizzati
  *  in mancanza di connessione.
  *
@@ -44,7 +45,7 @@ import static com.example.simon.ingegneriauniparthenope.Utility.saveArrayList;
 public class MainActivity extends AppCompatActivity {
 
     /**</p>
-     * Vengo avviati i vari task per scaricare le news,
+     * Vengono avviati i vari task per scaricare le news,
      * i professori e il personale <p>
      */
     public static NewsDownloader newsd = (NewsDownloader) new NewsDownloader().execute();
@@ -87,12 +88,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button bottoneNews = (Button) findViewById(R.id.buttonOne);
-        Button bottoneProf = (Button) findViewById(R.id.buttonTwo);
-        Button bottoneLessons = (Button) findViewById(R.id.buttonThree);
-        Button bottoneUtiliy = (Button) findViewById(R.id.buttonFour);
-        Button bottoneTech = (Button) findViewById(R.id.buttonFive);
-        Button bottoneMod = (Button) findViewById(R.id.buttonSix);
+        Button bottoneNews = findViewById(R.id.buttonOne);
+        Button bottoneProf = findViewById(R.id.buttonTwo);
+        Button bottoneLessons = findViewById(R.id.buttonThree);
+        Button bottoneUtiliy = findViewById(R.id.buttonFour);
+        Button bottoneTech = findViewById(R.id.buttonFive);
+        Button bottoneMod = findViewById(R.id.buttonSix);
 
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             //&& ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (checkConnectivity(this) == 0) {
             Toast.makeText(getApplicationContext(), R.string.nointernet, Toast.LENGTH_LONG).show();
-            if ((newsd.newsData.size() == 0) && (profd.nome.size() == 0) && (techd.nome.size() == 0) && (newsd.downloadStatus != 0) && (profd.downloadStatus != 0) && (techd.downloadStatus != 0)) {
+            if ((NewsDownloader.newsData.size() == 0) && (ProfDownloader.nome.size() == 0) && (TechDownloader.nome.size() == 0) && (NewsDownloader.downloadStatus != 0) && (ProfDownloader.downloadStatus != 0) && (TechDownloader.downloadStatus != 0)) {
                 String pathndata = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.newsfile_data);
                 String pathntitolo = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.newsfile_titolo);
                 String pathncontenuto = getFilesDir().getAbsolutePath() + "/" + getResources().getString(R.string.newsfile_contenuto);
@@ -145,76 +146,76 @@ public class MainActivity extends AppCompatActivity {
                 File filet4 = new File(pathttelefono);
 
                 if ((filen1.exists()) && (filen2.exists()) && (filen3.exists())) {
-                    newsd.newsTitolo = getSavedArrayList(this, getResources().getString(R.string.newsfile_titolo));
-                    newsd.newsCorpo = getSavedArrayList(this, getResources().getString(R.string.newsfile_contenuto));
-                    newsd.newsData = getSavedArrayList(this, getResources().getString(R.string.newsfile_data));
+                    NewsDownloader.newsTitolo = getSavedArrayList(this, getResources().getString(R.string.newsfile_titolo));
+                    NewsDownloader.newsCorpo = getSavedArrayList(this, getResources().getString(R.string.newsfile_contenuto));
+                    NewsDownloader.newsData = getSavedArrayList(this, getResources().getString(R.string.newsfile_data));
                 }
 
                 if ((filep1.exists()) && (filep2.exists()) && (filep3.exists()) && (filep4.exists())) {
-                    profd.nome = getSavedArrayList(this, getResources().getString(R.string.proffile_nome));
-                    profd.telefono = getSavedArrayList(this, getResources().getString(R.string.proffile_telefono));
-                    profd.email = getSavedArrayList(this, getResources().getString(R.string.proffile_email));
-                    profd.studio = getSavedArrayList(this, getResources().getString(R.string.proffile_studio));
+                    ProfDownloader.nome = getSavedArrayList(this, getResources().getString(R.string.proffile_nome));
+                    ProfDownloader.telefono = getSavedArrayList(this, getResources().getString(R.string.proffile_telefono));
+                    ProfDownloader.email = getSavedArrayList(this, getResources().getString(R.string.proffile_email));
+                    ProfDownloader.studio = getSavedArrayList(this, getResources().getString(R.string.proffile_studio));
                 }
 
                 if ((filet1.exists()) && (filet2.exists()) && (filet3.exists()) && (filet4.exists())) {
-                    techd.nome = getSavedArrayList(this, getResources().getString(R.string.techfile_nome));
-                    techd.telefono = getSavedArrayList(this, getResources().getString(R.string.techfile_telefono));
-                    techd.email = getSavedArrayList(this, getResources().getString(R.string.techfile_email));
-                    techd.studio = getSavedArrayList(this, getResources().getString(R.string.techfile_studio));
+                    TechDownloader.nome = getSavedArrayList(this, getResources().getString(R.string.techfile_nome));
+                    TechDownloader.telefono = getSavedArrayList(this, getResources().getString(R.string.techfile_telefono));
+                    TechDownloader.email = getSavedArrayList(this, getResources().getString(R.string.techfile_email));
+                    TechDownloader.studio = getSavedArrayList(this, getResources().getString(R.string.techfile_studio));
                 }
             }
         }
 
-        if ((checkConnectivity(this) == 1) && ((newsd.downloadStatus == 2) || (newsd.downloadStatus == 3))) {
-            newsd.newsTitolo.clear();
-            newsd.newsCorpo.clear();
-            newsd.newsData.clear();
+        if ((checkConnectivity(this) == 1) && ((NewsDownloader.downloadStatus == 2) || (NewsDownloader.downloadStatus == 3))) {
+            NewsDownloader.newsTitolo.clear();
+            NewsDownloader.newsCorpo.clear();
+            NewsDownloader.newsData.clear();
             newsd = (NewsDownloader) new NewsDownloader().execute();
         }
-        if ((checkConnectivity(this) == 1) && ((profd.downloadStatus == 2) || (profd.downloadStatus == 3))) {
-            profd.nome.clear();
-            profd.telefono.clear();
-            profd.email.clear();
-            profd.studio.clear();
+        if ((checkConnectivity(this) == 1) && ((ProfDownloader.downloadStatus == 2) || (ProfDownloader.downloadStatus == 3))) {
+            ProfDownloader.nome.clear();
+            ProfDownloader.telefono.clear();
+            ProfDownloader.email.clear();
+            ProfDownloader.studio.clear();
             profd = (ProfDownloader) new ProfDownloader().execute();
         }
-        if ((checkConnectivity(this) == 1) && ((techd.downloadStatus == 2) || (techd.downloadStatus == 3))) {
-            techd.nome.clear();
-            techd.telefono.clear();
-            techd.email.clear();
-            techd.studio.clear();
+        if ((checkConnectivity(this) == 1) && ((TechDownloader.downloadStatus == 2) || (TechDownloader.downloadStatus == 3))) {
+            TechDownloader.nome.clear();
+            TechDownloader.telefono.clear();
+            TechDownloader.email.clear();
+            TechDownloader.studio.clear();
             techd = (TechDownloader) new TechDownloader().execute();
         }
 
-        if ((checkConnectivity(this) == 1) && (techd.downloadStatus == 1) && (techd.erroreDownload == false) && (insavingt == true)) {
+        if ((checkConnectivity(this) == 1) && (TechDownloader.downloadStatus == 1) && (TechDownloader.erroreDownload == false) && (insavingt == true)) {
             //Salvo
-            saveArrayList(this, techd.nome, getResources().getString(R.string.techfile_nome));
-            saveArrayList(this, techd.telefono, getResources().getString(R.string.techfile_telefono));
-            saveArrayList(this, techd.email, getResources().getString(R.string.techfile_email));
-            saveArrayList(this, techd.studio, getResources().getString(R.string.techfile_studio));
+            saveArrayList(this, TechDownloader.nome, getResources().getString(R.string.techfile_nome));
+            saveArrayList(this, TechDownloader.telefono, getResources().getString(R.string.techfile_telefono));
+            saveArrayList(this, TechDownloader.email, getResources().getString(R.string.techfile_email));
+            saveArrayList(this, TechDownloader.studio, getResources().getString(R.string.techfile_studio));
             insavingt = false;
         }
 
-        if ((checkConnectivity(this) == 1) && (profd.downloadStatus == 1) && (profd.erroreDownload == false) && (insavingp == true)) {
+        if ((checkConnectivity(this) == 1) && (ProfDownloader.downloadStatus == 1) && (ProfDownloader.erroreDownload == false) && (insavingp == true)) {
             //Salvo
-            saveArrayList(this, profd.nome, getResources().getString(R.string.proffile_nome));
-            saveArrayList(this, profd.telefono, getResources().getString(R.string.proffile_telefono));
-            saveArrayList(this, profd.email, getResources().getString(R.string.proffile_email));
-            saveArrayList(this, profd.studio, getResources().getString(R.string.proffile_studio));
+            saveArrayList(this, ProfDownloader.nome, getResources().getString(R.string.proffile_nome));
+            saveArrayList(this, ProfDownloader.telefono, getResources().getString(R.string.proffile_telefono));
+            saveArrayList(this, ProfDownloader.email, getResources().getString(R.string.proffile_email));
+            saveArrayList(this, ProfDownloader.studio, getResources().getString(R.string.proffile_studio));
             insavingp = false;
         }
 
-        if ((checkConnectivity(this) == 1) && (newsd.downloadStatus == 1) && (newsd.erroreDownload == false) && (insavingn == true)) {
+        if ((checkConnectivity(this) == 1) && (NewsDownloader.downloadStatus == 1) && (NewsDownloader.erroreDownload == false) && (insavingn == true)) {
             //Salvo
-            saveArrayList(this, newsd.newsData, getResources().getString(R.string.newsfile_data));
-            saveArrayList(this, newsd.newsTitolo, getResources().getString(R.string.newsfile_titolo));
-            saveArrayList(this, newsd.newsCorpo, getResources().getString(R.string.newsfile_contenuto));
+            saveArrayList(this, NewsDownloader.newsData, getResources().getString(R.string.newsfile_data));
+            saveArrayList(this, NewsDownloader.newsTitolo, getResources().getString(R.string.newsfile_titolo));
+            saveArrayList(this, NewsDownloader.newsCorpo, getResources().getString(R.string.newsfile_contenuto));
             insavingn = false;
         }
 
 
-        ImageButton bottoneCS = (ImageButton) findViewById(R.id.buttonStudenti);
+        ImageButton bottoneCS = findViewById(R.id.buttonStudenti);
 
 
         bottoneCS.setOnClickListener(new View.OnClickListener() {
@@ -230,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        ImageButton bottoneDip = (ImageButton) findViewById(R.id.dipartimento);
+        ImageButton bottoneDip = findViewById(R.id.dipartimento);
 
 
         bottoneDip.setOnClickListener(new View.OnClickListener() {
@@ -255,14 +256,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if ((newsd.downloadStatus == 0)) {
+                if ((NewsDownloader.downloadStatus == 0)) {
                     Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
-                } else if (newsd.newsData.isEmpty() == false) {
-                    if ((checkConnectivity(MainActivity.this) == 1) && (newsd.erroreDownload == false) && (insavingn == true)) {
+                } else if (NewsDownloader.newsData.isEmpty() == false) {
+                    if ((checkConnectivity(MainActivity.this) == 1) && (NewsDownloader.erroreDownload == false) && (insavingn == true)) {
                         //Salvo
-                        saveArrayList(MainActivity.this, newsd.newsData, getResources().getString(R.string.newsfile_data));
-                        saveArrayList(MainActivity.this, newsd.newsTitolo, getResources().getString(R.string.newsfile_titolo));
-                        saveArrayList(MainActivity.this, newsd.newsCorpo, getResources().getString(R.string.newsfile_contenuto));
+                        saveArrayList(MainActivity.this, NewsDownloader.newsData, getResources().getString(R.string.newsfile_data));
+                        saveArrayList(MainActivity.this, NewsDownloader.newsTitolo, getResources().getString(R.string.newsfile_titolo));
+                        saveArrayList(MainActivity.this, NewsDownloader.newsCorpo, getResources().getString(R.string.newsfile_contenuto));
                         insavingn = false;
                     }
                     startActivity(new Intent(MainActivity.this, NewsActivity.class));
@@ -281,15 +282,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if ((profd.downloadStatus == 0)) {
+                if ((ProfDownloader.downloadStatus == 0)) {
                     Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
-                } else if (profd.nome.isEmpty() == false) {
-                    if ((checkConnectivity(MainActivity.this) == 1) && (profd.downloadStatus == 1) && (profd.erroreDownload == false) && (insavingp == true)) {
+                } else if (ProfDownloader.nome.isEmpty() == false) {
+                    if ((checkConnectivity(MainActivity.this) == 1) && (ProfDownloader.downloadStatus == 1) && (ProfDownloader.erroreDownload == false) && (insavingp == true)) {
                         //Salvo
-                        saveArrayList(MainActivity.this, profd.nome, getResources().getString(R.string.proffile_nome));
-                        saveArrayList(MainActivity.this, profd.telefono, getResources().getString(R.string.proffile_telefono));
-                        saveArrayList(MainActivity.this, profd.email, getResources().getString(R.string.proffile_email));
-                        saveArrayList(MainActivity.this, profd.studio, getResources().getString(R.string.proffile_studio));
+                        saveArrayList(MainActivity.this, ProfDownloader.nome, getResources().getString(R.string.proffile_nome));
+                        saveArrayList(MainActivity.this, ProfDownloader.telefono, getResources().getString(R.string.proffile_telefono));
+                        saveArrayList(MainActivity.this, ProfDownloader.email, getResources().getString(R.string.proffile_email));
+                        saveArrayList(MainActivity.this, ProfDownloader.studio, getResources().getString(R.string.proffile_studio));
                         insavingp = false;
                     }
                     startActivity(new Intent(MainActivity.this, ProfActivity.class));
@@ -329,15 +330,15 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                if ((techd.downloadStatus == 0)) {
+                if ((TechDownloader.downloadStatus == 0)) {
                     Toast.makeText(getApplicationContext(), R.string.downloadingStatus, Toast.LENGTH_SHORT).show();
-                } else if (techd.nome.isEmpty() == false) {
-                    if ((checkConnectivity(MainActivity.this) == 1) && (techd.downloadStatus == 1) && (techd.erroreDownload == false) && (insavingt == true)) {
+                } else if (TechDownloader.nome.isEmpty() == false) {
+                    if ((checkConnectivity(MainActivity.this) == 1) && (TechDownloader.downloadStatus == 1) && (TechDownloader.erroreDownload == false) && (insavingt == true)) {
                         //Salvo
-                        saveArrayList(MainActivity.this, techd.nome, getResources().getString(R.string.techfile_nome));
-                        saveArrayList(MainActivity.this, techd.telefono, getResources().getString(R.string.techfile_telefono));
-                        saveArrayList(MainActivity.this, techd.email, getResources().getString(R.string.techfile_email));
-                        saveArrayList(MainActivity.this, techd.studio, getResources().getString(R.string.techfile_studio));
+                        saveArrayList(MainActivity.this, TechDownloader.nome, getResources().getString(R.string.techfile_nome));
+                        saveArrayList(MainActivity.this, TechDownloader.telefono, getResources().getString(R.string.techfile_telefono));
+                        saveArrayList(MainActivity.this, TechDownloader.email, getResources().getString(R.string.techfile_email));
+                        saveArrayList(MainActivity.this, TechDownloader.studio, getResources().getString(R.string.techfile_studio));
                         insavingt = false;
                     }
                     startActivity(new Intent(MainActivity.this, TechActivity.class));
@@ -372,9 +373,12 @@ public class MainActivity extends AppCompatActivity {
      *
      *
      */
-    @Override
+
+
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        Toolbar toolbar = findViewById(R.id.onOptionsItemSelected);
+        setSupportActionBar(toolbar);
         switch (id) {
             case R.id.ITEM_1:
 
@@ -382,7 +386,7 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.ITEM_2:
-                Intent fbconn = newFacebookIntent(getPackageManager(), "https://www.facebook.com/YouParthenope/");
+                Intent fbconn = newFacebookIntent(getPackageManager(), "https://www.facebook.com/StudentiPerUniparthenope/");
                 startActivity(fbconn);
                 break;
             case R.id.ITEM_3:
@@ -411,6 +415,22 @@ public class MainActivity extends AppCompatActivity {
                 this.finish();
                 break;
 
+            case R.id.ITEM_7:
+
+                final AlertDialog.Builder alertinfo2 = new AlertDialog.Builder(MainActivity.this);
+                alertinfo2.setTitle("Info sugli sviluppatori").setMessage("Applicazione sviluppata da Giuliano Riccio, Simone Ardiero, Vittorio Colonna e Marco Martino").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+
+
+                    }
+
+                });
+                AlertDialog dialoginfo2 = alertinfo2.create();
+                dialoginfo2.show();
+                break;
+
+
         }
         return false;
     }
@@ -428,24 +448,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if ((checkConnectivity(this) == 1) && ((newsd.downloadStatus == 2) || (newsd.downloadStatus == 3))) {
-            newsd.newsTitolo.clear();
-            newsd.newsCorpo.clear();
-            newsd.newsData.clear();
+        if ((checkConnectivity(this) == 1) && ((NewsDownloader.downloadStatus == 2) || (NewsDownloader.downloadStatus == 3))) {
+            NewsDownloader.newsTitolo.clear();
+            NewsDownloader.newsCorpo.clear();
+            NewsDownloader.newsData.clear();
             newsd = (NewsDownloader) new NewsDownloader().execute();
         }
-        if ((checkConnectivity(this) == 1) && ((profd.downloadStatus == 2) || (profd.downloadStatus == 3))) {
-            profd.nome.clear();
-            profd.telefono.clear();
-            profd.email.clear();
-            profd.studio.clear();
+        if ((checkConnectivity(this) == 1) && ((ProfDownloader.downloadStatus == 2) || (ProfDownloader.downloadStatus == 3))) {
+            ProfDownloader.nome.clear();
+            ProfDownloader.telefono.clear();
+            ProfDownloader.email.clear();
+            ProfDownloader.studio.clear();
             profd = (ProfDownloader) new ProfDownloader().execute();
         }
-        if ((checkConnectivity(this) == 1) && ((techd.downloadStatus == 2) || (techd.downloadStatus == 3))) {
-            techd.nome.clear();
-            techd.telefono.clear();
-            techd.email.clear();
-            techd.studio.clear();
+        if ((checkConnectivity(this) == 1) && ((TechDownloader.downloadStatus == 2) || (TechDownloader.downloadStatus == 3))) {
+            TechDownloader.nome.clear();
+            TechDownloader.telefono.clear();
+            TechDownloader.email.clear();
+            TechDownloader.studio.clear();
             techd = (TechDownloader) new TechDownloader().execute();
         }
 

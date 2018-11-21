@@ -13,6 +13,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/guideline8"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="67dp">
 
     </LinearLayout>
@@ -40,65 +41,69 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline6">
 
+
         <Button
             android:id="@+id/buttonCorso1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
-            android:paddingBottom="20dp"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:paddingTop="20dp"
+            android:paddingBottom="20dp"
             android:text="@string/civileT"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
         <Button
             android:id="@+id/buttonCorso2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:paddingBottom="20dp"
-            android:paddingTop="20dp"
             android:text="@string/civileM"
-            android:textColor="@android:color/background_light" />
+            android:paddingTop="20dp"
+            android:textColor="@android:color/white" />
+
 
         <Button
             android:id="@+id/buttonCorso3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
-            android:paddingBottom="20dp"
             android:paddingTop="20dp"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:text="@string/gestionaleT"
-            android:textColor="@android:color/background_light" />
+            android:paddingBottom="20dp"
+            android:textColor="@android:color/white" />
+
 
         <Button
             android:id="@+id/buttonCorso4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:paddingBottom="20dp"
-            android:paddingTop="20dp"
             android:text="@string/gestionaleM"
-            android:textColor="@android:color/background_light" />
+            android:paddingTop="20dp"
+            android:textColor="@android:color/white" />
+
 
         <Button
             android:id="@+id/buttonCorso5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:paddingBottom="20dp"
-            android:paddingTop="20dp"
             android:text="@string/tlcT"
-            android:textColor="@android:color/background_light" />
+            android:paddingTop="20dp"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/buttonCorso6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
-            android:paddingBottom="20dp"
             android:paddingTop="20dp"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:text="@string/tlcM"
-            android:textColor="@android:color/background_light" />
+            android:paddingBottom="20dp"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 

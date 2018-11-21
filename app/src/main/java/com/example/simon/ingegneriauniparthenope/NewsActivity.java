@@ -1,5 +1,6 @@
 package com.example.simon.ingegneriauniparthenope;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -51,14 +52,12 @@ public class NewsActivity extends AppCompatActivity {
      * @param SavedInstanceState
      */
 
+    @SuppressLint("ClickableViewAccessibility")
     protected void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
         setContentView(R.layout.activity_news);
 
         final Spinner spinnerDate = (Spinner) findViewById(R.id.spinnerData);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         final TextView result = (TextView) findViewById(R.id.result);
         result.setMovementMethod(LinkMovementMethod.getInstance());
         final TextView title = (TextView) findViewById(R.id.title);

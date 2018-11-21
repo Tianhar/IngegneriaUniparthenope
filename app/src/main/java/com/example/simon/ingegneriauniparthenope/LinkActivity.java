@@ -30,7 +30,7 @@ public class LinkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         Button bottone_Gruppo = (Button) findViewById(R.id.bottoneGruppo);
@@ -48,7 +48,7 @@ public class LinkActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View v) {
-                Intent fbconn = newFacebookIntent(getPackageManager(), "https://it-it.facebook.com/ingegneria.uniparthenope/");
+                Intent fbconn = newFacebookIntent(getPackageManager(), "https://it-it.facebook.com/Parthenope/");
                 startActivity(fbconn);
             }
         });

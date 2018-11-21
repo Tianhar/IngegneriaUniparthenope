@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -25,7 +26,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline12">
+        app:layout_constraintTop_toBottomOf="@+id/guideline12"
+        tools:ignore="ExtraText">
 
         <Button
             android:id="@+id/bottoneLearning"
@@ -33,18 +35,18 @@
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
-            android:textColor="@android:color/background_light"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white"
             android:text="@string/UTIL_2" />
 
         <Button
             android:id="@+id/bottoneGruppo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
-            android:textColor="@android:color/background_light"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white"
             android:text="@string/UTIL_1" />
 
         <Button
@@ -53,8 +55,8 @@
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
-            android:textColor="@android:color/background_light"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white"
             android:text="@string/UTIL_5" />
 
         <Button
@@ -63,8 +65,8 @@
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
-            android:textColor="@android:color/background_light"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white"
             android:text="@string/UTIL_6" />
 
         <Button
@@ -73,8 +75,8 @@
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
-            android:textColor="@android:color/background_light"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white"
             android:text="@string/UTIL_7" />
 
     </LinearLayout>
